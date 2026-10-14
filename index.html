@@ -1,11 +1,843 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Magish Studio - Digital Konten Lokalisasi</title>
-  </head>
-  <body>
-    <h1 align="center">Magish Studio</h1>
-    <p align="center">
-  <img width="250" height="250" alt="image" src="https://github.com/user-attachments/assets/c004677a-f2e5-4acf-a77d-cff33b3ff2c4" /></p>
-  </body>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magish Studio - Jasa Lokalisasi Konten Digital</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            900: '#070B19',
+                            800: '#0B132B',
+                            700: '#1C2541',
+                            600: '#2A365C'
+                        },
+                        purple: {
+                            magic: '#7B2CBF',
+                            bright: '#9D4EDD',
+                            glow: '#C77DFF'
+                        },
+                        gold: {
+                            magic: '#FFC300',
+                            bright: '#FFD60A',
+                            accent: '#FFB703'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom CSS effects and glowing elements */
+        body {
+            background-color: #070B19;
+            color: #F8FAFC;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .font-heading {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glass-card {
+            background: rgba(28, 37, 65, 0.55);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(157, 78, 221, 0.18);
+        }
+
+        .glass-card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card-hover:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 195, 0, 0.4);
+            box-shadow: 0 10px 30px -10px rgba(123, 44, 191, 0.35);
+        }
+
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #FFD60A 0%, #FFB703 50%, #FF9100 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-gradient-magic {
+            background: linear-gradient(135deg, #C77DFF 0%, #9D4EDD 50%, #7B2CBF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .bg-gradient-magic {
+            background: linear-gradient(135deg, #7B2CBF 0%, #5A189A 100%);
+        }
+
+        .bg-gradient-gold {
+            background: linear-gradient(135deg, #FFC300 0%, #FFB703 100%);
+        }
+
+        /* Glowing Animations */
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.4; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.08); }
+        }
+
+        .glow-sphere {
+            animation: pulseGlow 6s infinite ease-in-out;
+        }
+
+        /* Magic wand sparkle animation */
+        @keyframes sparkleRotate {
+            0% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(180deg) scale(1.15); }
+            100% { transform: rotate(360deg) scale(1); }
+        }
+
+        .sparkle-icon {
+            animation: sparkleRotate 8s infinite linear;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #070B19;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1C2541;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #7B2CBF;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-purple-magic selection:text-white">
+
+    <!-- NAVIGATION BAR -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-card border-b border-navy-700/50" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Brand Logo (Matching User Provided Logo) -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="relative w-11 h-11 flex items-center justify-center bg-navy-800 rounded-xl border border-purple-magic/40 p-1 group-hover:border-gold-magic transition-colors">
+                        <!-- SVG Logo Icon based on image -->
+                        <svg viewBox="0 0 100 100" class="w-full h-full text-purple-bright" fill="none" stroke="currentColor">
+                            <!-- Globe Grid Lines -->
+                            <circle cx="50" cy="50" r="38" stroke="#9D4EDD" stroke-width="3.5" />
+                            <ellipse cx="50" cy="50" rx="38" ry="16" stroke="#9D4EDD" stroke-width="2.5" />
+                            <line x1="50" y1="12" x2="50" y2="88" stroke="#9D4EDD" stroke-width="2.5" />
+                            <line x1="12" y1="50" x2="88" y2="50" stroke="#9D4EDD" stroke-width="2.5" />
+                            <!-- Magic Wand -->
+                            <line x1="22" y1="78" x2="68" y2="30" stroke="#FFC300" stroke-width="5" stroke-linecap="round" />
+                            <line x1="22" y1="78" x2="35" y2="65" stroke="#E2E8F0" stroke-width="6" stroke-linecap="round" />
+                            <!-- Sparkle Star -->
+                            <path d="M72 15 L74 24 L83 26 L74 28 L72 37 L70 28 L61 26 L70 24 Z" fill="#FFC300" stroke="none" class="sparkle-icon" />
+                        </svg>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-heading font-extrabold text-lg tracking-wider text-white group-hover:text-gold-magic transition-colors">MAGISH STUDIO</span>
+                        <div class="h-0.5 w-full bg-gold-magic rounded-full"></div>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-8 font-medium text-sm">
+                    <a href="#beranda" class="text-gray-300 hover:text-gold-magic transition-colors py-2">Beranda</a>
+                    <a href="#layanan" class="text-gray-300 hover:text-gold-magic transition-colors py-2">Layanan</a>
+                    <a href="#kalkulator" class="text-gray-300 hover:text-gold-magic transition-colors py-2">Kalkulator</a>
+                    <a href="#keunggulan" class="text-gray-300 hover:text-gold-magic transition-colors py-2">Mengapa Kami</a>
+                    <a href="#portfolio" class="text-gray-300 hover:text-gold-magic transition-colors py-2">Portfolio</a>
+                    <a href="#kontak" class="text-gray-300 hover:text-gold-magic transition-colors py-2">Kontak</a>
+                </nav>
+
+                <!-- CTA Header Button -->
+                <div class="hidden md:flex items-center">
+                    <a href="#kontak" class="px-5 py-2.5 rounded-xl font-semibold text-xs tracking-wider uppercase bg-gradient-gold text-navy-900 hover:shadow-lg hover:shadow-gold-magic/20 transition-all hover:-translate-y-0.5">
+                        Konsultasi Gratis
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="p-2 rounded-lg text-gray-300 hover:text-white hover:bg-navy-700 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden glass-card border-b border-navy-700/50 px-4 pt-2 pb-6 space-y-3">
+            <a href="#beranda" class="block py-2 text-gray-200 hover:text-gold-magic font-medium">Beranda</a>
+            <a href="#layanan" class="block py-2 text-gray-200 hover:text-gold-magic font-medium">Layanan</a>
+            <a href="#kalkulator" class="block py-2 text-gray-200 hover:text-gold-magic font-medium">Kalkulator Cost</a>
+            <a href="#keunggulan" class="block py-2 text-gray-200 hover:text-gold-magic font-medium">Mengapa Kami</a>
+            <a href="#portfolio" class="block py-2 text-gray-200 hover:text-gold-magic font-medium">Portfolio</a>
+            <a href="#kontak" class="block py-2 text-gray-200 hover:text-gold-magic font-medium">Kontak</a>
+            <a href="#kontak" class="block text-center w-full py-3 mt-4 rounded-xl font-semibold text-xs tracking-wider uppercase bg-gradient-gold text-navy-900">
+                Konsultasi Gratis
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="beranda" class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
+        <!-- Glowing Ambient Background Orbs -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-purple-magic/20 rounded-full blur-[120px] pointer-events-none glow-sphere"></div>
+        <div class="absolute top-1/3 right-10 w-[300px] h-[300px] bg-gold-magic/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Hero Column: Content -->
+                <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border border-purple-bright/30 text-xs font-semibold text-gold-bright uppercase tracking-widest">
+                        <i class="fa-solid fa-wand-magic-sparkles text-purple-bright"></i>
+                        <span>Magish Localization Agency</span>
+                    </div>
+
+                    <h1 class="font-heading font-black text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-tight">
+                        Menghubungkan Konten Anda ke Pasar Global dengan <span class="text-gradient-gold">Sentuhan Magis</span> Lokalisasi
+                    </h1>
+
+                    <p class="text-gray-300 text-lg sm:text-xl max-w-2xl font-light leading-relaxed mx-auto lg:mx-0">
+                        Bawa Game, Aplikasi, Website, dan Media Anda melampaui batas bahasa. Kami tidak hanya menerjemahkan, kami menyesuaikan budaya untuk pengalaman audiens global yang autentik.
+                    </p>
+
+                    <!-- CTA Group -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#kontak" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-sm tracking-wider uppercase bg-gradient-gold text-navy-900 hover:shadow-xl hover:shadow-gold-magic/20 transition-all hover:-translate-y-1 text-center">
+                            <i class="fa-solid fa-paper-plane mr-2"></i> Mulai Proyek Anda
+                        </a>
+                        <a href="#layanan" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-sm tracking-wider uppercase glass-card hover:border-purple-glow text-white transition-all text-center hover:-translate-y-1">
+                            <i class="fa-solid fa-layer-group mr-2 text-purple-bright"></i> Lihat Layanan
+                        </a>
+                    </div>
+
+                    <!-- Trust Indicators -->
+                    <div class="pt-8 border-t border-navy-700/60 grid grid-cols-3 gap-4 text-center lg:text-left">
+                        <div>
+                            <div class="font-heading font-extrabold text-2xl lg:text-3xl text-gradient-gold">50+</div>
+                            <div class="text-xs text-gray-400 mt-1">Bahasa Target</div>
+                        </div>
+                        <div>
+                            <div class="font-heading font-extrabold text-2xl lg:text-3xl text-purple-glow">99.8%</div>
+                            <div class="text-xs text-gray-400 mt-1">Akurasi Kultural</div>
+                        </div>
+                        <div>
+                            <div class="font-heading font-extrabold text-2xl lg:text-3xl text-gradient-gold">10M+</div>
+                            <div class="text-xs text-gray-400 mt-1">Kata Terlokalisasi</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Hero Column: Visual Logo Banner -->
+                <div class="lg:col-span-5 flex justify-center relative">
+                    <div class="relative w-full max-w-md aspect-square rounded-3xl glass-card p-8 flex flex-col items-center justify-center border-2 border-purple-magic/30 shadow-2xl shadow-purple-900/40 group hover:border-gold-magic/50 transition-all">
+                        
+                        <!-- Glowing backdrop ring -->
+                        <div class="absolute inset-4 rounded-2xl border border-dashed border-purple-bright/20 animate-spin" style="animation-duration: 25s;"></div>
+
+                        <!-- Big Interactive Central Graphic (Recreating User Logo in High Detail) -->
+                        <div class="relative w-56 h-56 flex items-center justify-center mb-6">
+                            <svg viewBox="0 0 200 200" class="w-full h-full drop-shadow-[0_0_20px_rgba(157,78,221,0.5)]" fill="none">
+                                <!-- Globe Background Outer Circle -->
+                                <circle cx="100" cy="100" r="75" stroke="#7B2CBF" stroke-width="6" fill="#0B132B" />
+                                
+                                <!-- Globe Grid Latitudes & Longitudes -->
+                                <ellipse cx="100" cy="100" rx="75" ry="32" stroke="#9D4EDD" stroke-width="4" opacity="0.8" />
+                                <ellipse cx="100" cy="100" rx="32" ry="75" stroke="#9D4EDD" stroke-width="4" opacity="0.8" />
+                                <line x1="100" y1="25" x2="100" y2="175" stroke="#9D4EDD" stroke-width="4" opacity="0.8" />
+                                <line x1="25" y1="100" x2="175" y2="100" stroke="#9D4EDD" stroke-width="4" opacity="0.8" />
+                                
+                                <!-- Magic Wand Stick -->
+                                <line x1="45" y1="155" x2="135" y2="65" stroke="#FFC300" stroke-width="10" stroke-linecap="round" />
+                                <line x1="45" y1="155" x2="70" y2="130" stroke="#F1F5F9" stroke-width="12" stroke-linecap="round" />
+                                
+                                <!-- Sparkling Magic Star -->
+                                <path d="M145 30 L150 48 L168 53 L150 58 L145 76 L140 58 L122 53 L140 48 Z" fill="#FFC300" class="sparkle-icon" />
+                                <path d="M165 75 L167 83 L175 85 L167 87 L165 95 L163 87 L155 85 L163 83 Z" fill="#FFD60A" opacity="0.9" />
+                            </svg>
+                        </div>
+
+                        <h2 class="font-heading font-black text-2xl tracking-widest text-white text-center">
+                            MAGISH STUDIO
+                        </h2>
+                        <div class="h-1 w-24 bg-gold-magic rounded-full mt-2 mb-3"></div>
+                        <p class="text-xs uppercase tracking-widest text-gray-400 font-semibold text-center">
+                            Digital Content Localization Agency
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="layanan" class="py-20 bg-navy-800/60 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-semibold text-gold-magic uppercase tracking-widest mb-3">
+                    Layanan Utama Kami
+                </h2>
+                <p class="font-heading font-extrabold text-3xl sm:text-4xl text-white">
+                    Solusi Lokalisasi Komprehensif untuk Semua Media Digital
+                </p>
+                <div class="w-16 h-1 bg-purple-bright mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Service 1: Game Localization -->
+                <div class="glass-card p-8 rounded-2xl glass-card-hover relative group">
+                    <div class="w-14 h-14 rounded-xl bg-purple-magic/20 border border-purple-bright/40 flex items-center justify-center text-gold-magic text-2xl mb-6 group-hover:bg-purple-magic group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-gamepad"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl text-white mb-3">Lokalisasi Game</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                        Penerjemahan teks in-game, antarmuka (UI/UX), narasi cerita, skrip lore, hingga adaptasi istilah gaming sesuai budaya pasar target.
+                    </p>
+                    <ul class="text-xs text-gray-400 space-y-2">
+                        <li><i class="fa-solid fa-check text-gold-magic mr-1.5"></i> LQA (Language Quality Assurance)</li>
+                        <li><i class="fa-solid fa-check text-gold-magic mr-1.5"></i> Adaptasi Humor & Karakter</li>
+                    </ul>
+                </div>
+
+                <!-- Service 2: App & Web Localization -->
+                <div class="glass-card p-8 rounded-2xl glass-card-hover relative group">
+                    <div class="w-14 h-14 rounded-xl bg-purple-magic/20 border border-purple-bright/40 flex items-center justify-center text-gold-magic text-2xl mb-6 group-hover:bg-purple-magic group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl text-white mb-3">Web & Aplikasi</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                        Adaptasi ekosistem SaaS, e-commerce, dan aplikasi mobile. Pengintegrasian file .json, .po, .xml tanpa merusak struktur kode.
+                    </p>
+                    <ul class="text-xs text-gray-400 space-y-2">
+                        <li><i class="fa-solid fa-check text-gold-magic mr-1.5"></i> SEO Multibahasa</li>
+                        <li><i class="fa-solid fa-check text-gold-magic mr-1.5"></i> Format Tanggal, Mata Uang & Layout</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3: Dubbing & Subtitling -->
+                <div class="glass-card p-8 rounded-2xl glass-card-hover relative group">
+                    <div class="w-14 h-14 rounded-xl bg-purple-magic/20 border border-purple-bright/40 flex items-center justify-center text-gold-magic text-2xl mb-6 group-hover:bg-purple-magic group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-microphone-lines"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl text-white mb-3">Sulih Suara & Subtitle</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                        Penerjemahan video promosi, e-learning, film, dan trailer. Didukung pengisi suara (Voice Over) profesional penutur asli.
+                    </p>
+                    <ul class="text-xs text-gray-400 space-y-2">
+                        <li><i class="fa-solid fa-check text-gold-magic mr-1.5"></i> Sync Subtitle (.SRT / .VTT)</li>
+                        <li><i class="fa-solid fa-check text-gold-magic mr-1.5"></i> Voice-Over Studio Quality</li>
+                    </ul>
+                </div>
+
+                <!-- Service 4: Transcreation & Marketing -->
+                <div class="glass-card p-8 rounded-2xl glass-card-hover relative group">
+                    <div class="w-14 h-14 rounded-xl bg-purple-magic/20 border border-purple-bright/40 flex items-center justify-center text-gold-magic text-2xl mb-6 group-hover:bg-purple-magic group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-bullhorn"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl text-white mb-3">Pemasaran Transkultural</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                        Gubahan kreatif pesan pemasaran (Transcreation) agar promosi produk Anda beresonansi kuat secara emosional dengan audiens lokal.
+                    </p>
+                    <ul class="text-xs text-gray-400 space-y-2">
+                        <li><i class="fa-solid fa-check text-gold-magic mr-1.5"></i> Copywriting Kampanye Iklan</li>
+                        <li><i class="fa-solid fa-check text-gold-magic mr-1.5"></i> Audit Sensitivitas Budaya</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE COST CALCULATOR SECTION -->
+    <section id="kalkulator" class="py-20 relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-card p-8 sm:p-12 rounded-3xl border-2 border-purple-magic/30 relative overflow-hidden">
+                
+                <div class="text-center mb-10">
+                    <span class="px-3 py-1 rounded-full bg-purple-magic/20 text-gold-magic text-xs font-semibold uppercase tracking-wider">Estimasi Instan</span>
+                    <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-white mt-2">Kalkulator Perkiraan Biaya</h2>
+                    <p class="text-gray-300 text-sm mt-2">Hitung perkiraan harga dan durasi pengerjaan lokalisasi proyek Anda dalam hitungan detik.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    
+                    <!-- Calculator Inputs -->
+                    <div class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-200 mb-2">Tipe Konten Digital</label>
+                            <select id="calc-content-type" class="w-full bg-navy-800 border border-purple-bright/30 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold-magic transition-colors">
+                                <option value="game">Game (In-game text, UI & Lore)</option>
+                                <option value="app">Aplikasi Mobile / Software SaaS</option>
+                                <option value="web">Website & E-Commerce</option>
+                                <option value="video">Skrip Video / Subtitle</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-200 mb-2">Estimasi Jumlah Kata: <span id="word-count-label" class="text-gold-magic font-bold">5,000</span> Kata</label>
+                            <input type="range" id="calc-words" min="500" max="50000" step="500" value="5000" class="w-full h-2 bg-navy-700 rounded-lg appearance-none cursor-pointer accent-gold-magic">
+                            <div class="flex justify-between text-xs text-gray-400 mt-1">
+                                <span>500 kata</span>
+                                <span>25.000 kata</span>
+                                <span>50.000+ kata</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-200 mb-2">Jumlah Bahasa Target</label>
+                            <div class="grid grid-cols-4 gap-2" id="lang-buttons">
+                                <button type="button" data-langs="1" class="lang-btn active border-2 border-gold-magic bg-purple-magic/30 text-white font-bold py-2 rounded-xl text-center text-sm">1 Bahasa</button>
+                                <button type="button" data-langs="2" class="lang-btn border border-purple-bright/30 bg-navy-800 text-gray-300 font-bold py-2 rounded-xl text-center text-sm">2 Bahasa</button>
+                                <button type="button" data-langs="3" class="lang-btn border border-purple-bright/30 bg-navy-800 text-gray-300 font-bold py-2 rounded-xl text-center text-sm">3 Bahasa</button>
+                                <button type="button" data-langs="5" class="lang-btn border border-purple-bright/30 bg-navy-800 text-gray-300 font-bold py-2 rounded-xl text-center text-sm">5+ Bahasa</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Calculator Result Box -->
+                    <div class="bg-navy-900/80 p-6 sm:p-8 rounded-2xl border border-purple-bright/30 flex flex-col justify-between h-full text-center md:text-left">
+                        <div>
+                            <span class="text-xs text-gray-400 uppercase font-semibold tracking-wider">Estimasi Investasi</span>
+                            <div class="text-3xl sm:text-4xl font-heading font-black text-gradient-gold mt-2 mb-1" id="calc-total-price">
+                                Rp 3.750.000
+                            </div>
+                            <p class="text-xs text-gray-400">*Harga akhir dapat bervariasi tergantung kompleksitas istilah.</p>
+                        </div>
+
+                        <div class="my-6 pt-6 border-t border-navy-700 space-y-3">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-400">Estimasi Waktu:</span>
+                                <span class="text-white font-semibold" id="calc-eta">3 - 4 Hari Kerja</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-400">LQA Testing:</span>
+                                <span class="text-gold-magic font-semibold">Termasuk (Gratis)</span>
+                            </div>
+                        </div>
+
+                        <a href="#kontak" onclick="applyQuoteToForm()" class="w-full py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider bg-gradient-gold text-navy-900 hover:shadow-lg transition-all text-center block">
+                            Klaim Penawaran Ini <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US SECTION -->
+    <section id="keunggulan" class="py-20 bg-navy-800/40 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-xs font-semibold text-gold-magic uppercase tracking-widest">Keunggulan Magish Studio</span>
+                    <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-white leading-tight">
+                        Mengapa Perusahaan Global Mempercayakan Konten Mereka Kepada Kami?
+                    </h2>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Penerjemahan mesin sering kali gagal menangkap nuansa lokal dan humor. Di Magish Studio, kami menggabungkan keahlian linguis penutur asli dengan alur kerja teknologi modern.
+                    </p>
+                    <a href="#kontak" class="inline-flex items-center gap-2 text-gold-magic font-semibold hover:underline text-sm">
+                        <span>Jadwalkan Diskusi Tim</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="lg:col-span-7 grid sm:grid-cols-2 gap-6">
+                    
+                    <div class="glass-card p-6 rounded-2xl">
+                        <div class="w-12 h-12 rounded-lg bg-purple-magic/30 text-gold-magic flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-earth-asia"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-lg text-white mb-2">Penutur Asli (Native Linguists)</h3>
+                        <p class="text-gray-300 text-xs leading-relaxed">
+                            Dikerjakan langsung oleh penerjemah yang merupakan penutur asli di negara target untuk menjamin kelancaran bahasa yang alami.
+                        </p>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-2xl">
+                        <div class="w-12 h-12 rounded-lg bg-purple-magic/30 text-gold-magic flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-lg text-white mb-2">LQA & QA Ketat</h3>
+                        <p class="text-gray-300 text-xs leading-relaxed">
+                            Proses 3 tahap: Translation, Editing, dan Proofreading (TEP) serta pengujian tampilan langsung di dalam antarmuka software.
+                        </p>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-2xl">
+                        <div class="w-12 h-12 rounded-lg bg-purple-magic/30 text-gold-magic flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-lg text-white mb-2">Penyelesaian Tepat Waktu</h3>
+                        <p class="text-gray-300 text-xs leading-relaxed">
+                            Manajemen proyek yang terstruktur memastikan deadline peluncuran game atau aplikasi Anda tidak akan pernah tertunda.
+                        </p>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-2xl">
+                        <div class="w-12 h-12 rounded-lg bg-purple-magic/30 text-gold-magic flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-lg text-white mb-2">Kerahasiaan Terjamin (NDA)</h3>
+                        <p class="text-gray-300 text-xs leading-relaxed">
+                            Seluruh aset rahasia sebelum tanggal rilis dilindungi penuh dengan perjanjian kerahasiaan hukum kelas industri.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO SECTION -->
+    <section id="portfolio" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-xs font-semibold text-gold-magic uppercase tracking-widest">Studi Kasus & Karya</span>
+                <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-white mt-2">
+                    Proyek Yang Telah Kami Lokalisasi
+                </h2>
+            </div>
+
+            <!-- Category Filter Tabs -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12">
+                <button class="portfolio-tab active px-5 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-purple-magic text-white transition-all" data-filter="all">Semua</button>
+                <button class="portfolio-tab px-5 py-2 rounded-xl text-xs font-bold uppercase tracking-wider glass-card text-gray-300 hover:text-white transition-all" data-filter="game">Game</button>
+                <button class="portfolio-tab px-5 py-2 rounded-xl text-xs font-bold uppercase tracking-wider glass-card text-gray-300 hover:text-white transition-all" data-filter="app">Aplikasi & SaaS</button>
+                <button class="portfolio-tab px-5 py-2 rounded-xl text-xs font-bold uppercase tracking-wider glass-card text-gray-300 hover:text-white transition-all" data-filter="web">Website</button>
+            </div>
+
+            <!-- Portfolio Grid -->
+            <div class="grid md:grid-cols-3 gap-8" id="portfolio-grid">
+                
+                <!-- Item 1: Game -->
+                <div class="portfolio-item game glass-card rounded-2xl overflow-hidden glass-card-hover">
+                    <div class="h-48 bg-navy-700 relative overflow-hidden flex items-center justify-center p-6 bg-gradient-to-br from-purple-900/50 to-navy-900">
+                        <i class="fa-solid fa-dragon text-6xl text-purple-bright opacity-40"></i>
+                        <span class="absolute top-4 right-4 bg-purple-magic/80 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">RPG Mobile Game</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-heading font-bold text-lg text-white mb-2">Chronicles of Eldoria</h3>
+                        <p class="text-gray-300 text-xs leading-relaxed mb-4">
+                            Lokalisasi 120.000+ kata skrip lore dan dialog dari Bahasa Inggris ke Bahasa Indonesia & Thai.
+                        </p>
+                        <div class="flex items-center justify-between text-xs text-gold-magic font-semibold">
+                            <span>Inggris &rarr; Indonesia, Thai</span>
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2: App -->
+                <div class="portfolio-item app glass-card rounded-2xl overflow-hidden glass-card-hover">
+                    <div class="h-48 bg-navy-700 relative overflow-hidden flex items-center justify-center p-6 bg-gradient-to-br from-blue-900/50 to-navy-900">
+                        <i class="fa-solid fa-wallet text-6xl text-gold-magic opacity-40"></i>
+                        <span class="absolute top-4 right-4 bg-gold-magic/80 text-navy-900 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Fintech App</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-heading font-bold text-lg text-white mb-2">PayPulse Global App</h3>
+                        <p class="text-gray-300 text-xs leading-relaxed mb-4">
+                            Penyesuaian UI/UX, terminologi keuangan, serta format regulasi mata uang lokal Asia Tenggara.
+                        </p>
+                        <div class="flex items-center justify-between text-xs text-gold-magic font-semibold">
+                            <span>Inggris &rarr; ID, VN, MY</span>
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3: Web -->
+                <div class="portfolio-item web glass-card rounded-2xl overflow-hidden glass-card-hover">
+                    <div class="h-48 bg-navy-700 relative overflow-hidden flex items-center justify-center p-6 bg-gradient-to-br from-indigo-900/50 to-navy-900">
+                        <i class="fa-solid fa-cart-shopping text-6xl text-purple-glow opacity-40"></i>
+                        <span class="absolute top-4 right-4 bg-purple-bright/80 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">E-Commerce Web</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-heading font-bold text-lg text-white mb-2">OmniMarket Platform</h3>
+                        <p class="text-gray-300 text-xs leading-relaxed mb-4">
+                            Lokalisasi katalog produk, SEO multibahasa, dan integrasi otomatis dengan CMS platform.
+                        </p>
+                        <div class="flex items-center justify-between text-xs text-gold-magic font-semibold">
+                            <span>Mandarin &rarr; Indonesia</span>
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="kontak" class="py-20 bg-navy-800/60 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-card p-8 sm:p-12 rounded-3xl border border-purple-magic/30">
+                <div class="text-center mb-10">
+                    <span class="text-xs font-semibold text-gold-magic uppercase tracking-widest">Mulai Konsultasi</span>
+                    <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-white mt-2">Hubungi Tim Magish Studio</h2>
+                    <p class="text-gray-300 text-sm mt-2">Kirimkan rincian proyek Anda dan tim kami akan merespons dalam kurun 24 jam.</p>
+                </div>
+
+                <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 mb-2 uppercase">Nama Lengkap</label>
+                            <input type="text" required placeholder="Budi Santoso" class="w-full bg-navy-900 border border-purple-bright/30 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold-magic transition-colors">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 mb-2 uppercase">Alamat Email Work</label>
+                            <input type="email" required placeholder="budi@perusahaan.com" class="w-full bg-navy-900 border border-purple-bright/30 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold-magic transition-colors">
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 mb-2 uppercase">Layanan Yang Dibutuhkan</label>
+                            <select id="form-service-select" class="w-full bg-navy-900 border border-purple-bright/30 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold-magic transition-colors">
+                                <option value="game">Lokalisasi Game</option>
+                                <option value="app">Lokalisasi Aplikasi / Software</option>
+                                <option value="web">Lokalisasi Website</option>
+                                <option value="dubbing">Sulih Suara & Subtitle</option>
+                                <option value="transcreation">Pemasaran Transkultural</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 mb-2 uppercase">Pasangan Bahasa Target</label>
+                            <input type="text" placeholder="Contoh: English to Indonesian" class="w-full bg-navy-900 border border-purple-bright/30 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold-magic transition-colors">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-300 mb-2 uppercase">Detail Pesan / Catatan Proyek</label>
+                        <textarea id="form-message" rows="4" required placeholder="Jelaskan secara singkat mengenai jenis konten, deadline, atau perkiraan wordcount..." class="w-full bg-navy-900 border border-purple-bright/30 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold-magic transition-colors"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full py-4 rounded-xl font-bold text-sm uppercase tracking-wider bg-gradient-gold text-navy-900 hover:shadow-xl hover:shadow-gold-magic/20 transition-all">
+                        <i class="fa-solid fa-paper-plane mr-2"></i> Kirim Pesan Proyek
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER SECTION -->
+    <footer class="bg-navy-900 border-t border-navy-700/60 py-12 text-sm text-gray-400">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                
+                <!-- Brand Info -->
+                <div class="md:col-span-2 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 bg-navy-800 rounded-lg border border-purple-magic/40 p-1">
+                            <svg viewBox="0 0 100 100" class="w-full h-full text-purple-bright" fill="none">
+                                <circle cx="50" cy="50" r="38" stroke="#9D4EDD" stroke-width="4" />
+                                <line x1="22" y1="78" x2="68" y2="30" stroke="#FFC300" stroke-width="6" stroke-linecap="round" />
+                                <path d="M72 15 L74 24 L83 26 L74 28 L72 37 L70 28 L61 26 L70 24 Z" fill="#FFC300" />
+                            </svg>
+                        </div>
+                        <span class="font-heading font-extrabold text-lg text-white">MAGISH STUDIO</span>
+                    </div>
+                    <p class="text-xs text-gray-400 max-w-sm leading-relaxed">
+                        Agensi lokalisasi konten digital terdepan. Kami membantu pengembang game, aplikasi, dan kreator menjangkau jutaan audiens di seluruh dunia.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Navigasi</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#beranda" class="hover:text-gold-magic transition-colors">Beranda</a></li>
+                        <li><a href="#layanan" class="hover:text-gold-magic transition-colors">Layanan</a></li>
+                        <li><a href="#kalkulator" class="hover:text-gold-magic transition-colors">Kalkulator Biaya</a></li>
+                        <li><a href="#portfolio" class="hover:text-gold-magic transition-colors">Portfolio</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social Links -->
+                <div>
+                    <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Hubungi Kami</h4>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="#" class="w-9 h-9 rounded-lg glass-card flex items-center justify-center text-gray-300 hover:text-gold-magic transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-lg glass-card flex items-center justify-center text-gray-300 hover:text-gold-magic transition-colors"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-lg glass-card flex items-center justify-center text-gray-300 hover:text-gold-magic transition-colors"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-lg glass-card flex items-center justify-center text-gray-300 hover:text-gold-magic transition-colors"><i class="fa-brands fa-discord"></i></a>
+                    </div>
+                    <p class="text-xs text-gray-400">hello@magishstudio.com</p>
+                </div>
+
+            </div>
+
+            <div class="pt-8 border-t border-navy-800 text-center text-xs text-gray-500">
+                &copy; 2026 Magish Studio. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- SUCCESS TOAST NOTIFICATION -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 glass-card border border-gold-magic p-4 rounded-2xl shadow-2xl flex items-center gap-3 max-w-md">
+        <div class="w-10 h-10 rounded-xl bg-gold-magic text-navy-900 flex items-center justify-center font-bold text-lg">
+            <i class="fa-solid fa-check"></i>
+        </div>
+        <div>
+            <h5 class="text-sm font-bold text-white">Pesan Terkirim!</h5>
+            <p class="text-xs text-gray-300">Terima kasih. Tim Magish Studio akan segera menghubungi Anda.</p>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Mobile Navigation Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking links
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Interactive Cost Calculator Logic
+        const contentTypeSelect = document.getElementById('calc-content-type');
+        const wordsRange = document.getElementById('calc-words');
+        const wordCountLabel = document.getElementById('word-count-label');
+        const langBtns = document.querySelectorAll('.lang-btn');
+        const totalPriceEl = document.getElementById('calc-total-price');
+        const etaEl = document.getElementById('calc-eta');
+
+        let selectedLangs = 1;
+
+        // Base rate per word in IDR
+        const baseRates = {
+            game: 750,
+            app: 700,
+            web: 650,
+            video: 800
+        };
+
+        langBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                langBtns.forEach(b => {
+                    b.classList.remove('active', 'border-2', 'border-gold-magic', 'bg-purple-magic/30', 'text-white');
+                    b.classList.add('border', 'border-purple-bright/30', 'bg-navy-800', 'text-gray-300');
+                });
+                btn.classList.add('active', 'border-2', 'border-gold-magic', 'bg-purple-magic/30', 'text-white');
+                btn.classList.remove('border', 'border-purple-bright/30', 'bg-navy-800', 'text-gray-300');
+                
+                selectedLangs = parseInt(btn.getAttribute('data-langs'));
+                calculateCost();
+            });
+        });
+
+        function calculateCost() {
+            const words = parseInt(wordsRange.value);
+            const type = contentTypeSelect.value;
+            wordCountLabel.textContent = words.toLocaleString('id-ID');
+
+            const rate = baseRates[type] || 750;
+            const totalPrice = words * rate * selectedLangs;
+
+            // Format Currency IDR
+            totalPriceEl.textContent = 'Rp ' + totalPrice.toLocaleString('id-ID');
+
+            // Calculate ETA
+            let days = Math.ceil((words / 2000) * (1 + (selectedLangs * 0.2)));
+            if (days < 2) days = 2;
+            etaEl.textContent = `${days} - ${days + 2} Hari Kerja`;
+        }
+
+        wordsRange.addEventListener('input', calculateCost);
+        contentTypeSelect.addEventListener('change', calculateCost);
+
+        // Apply calculated quote to contact form
+        function applyQuoteToForm() {
+            const words = wordsRange.value;
+            const type = contentTypeSelect.options[contentTypeSelect.selectedIndex].text;
+            const messageBox = document.getElementById('form-message');
+            messageBox.value = `Halo Magish Studio, saya ingin klaim estimasi kuotasi untuk ${type} sekitar ${parseInt(words).toLocaleString('id-ID')} kata (${selectedLangs} bahasa target).`;
+        }
+
+        // Portfolio Filtering
+        const portfolioTabs = document.querySelectorAll('.portfolio-tab');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        portfolioTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                portfolioTabs.forEach(t => {
+                    t.classList.remove('active', 'bg-purple-magic', 'text-white');
+                    t.classList.add('glass-card', 'text-gray-300');
+                });
+                tab.classList.add('active', 'bg-purple-magic', 'text-white');
+                tab.classList.remove('glass-card', 'text-gray-300');
+
+                const filter = tab.getAttribute('data-filter');
+
+                portfolioItems.forEach(item => {
+                    if (filter === 'all' || item.classList.contains(filter)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Contact Form Submission Mock
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            
+            // Show Toast
+            const toast = document.getElementById('toast');
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            // Reset form
+            document.getElementById('contact-form').reset();
+
+            // Hide Toast after 4s
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-24', 'opacity-0');
+            }, 4000);
+        }
+
+        // Initialize default calculation
+        calculateCost();
+    </script>
+</body>
 </html>

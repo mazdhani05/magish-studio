@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Magish Studio - Jasa Lokalisasi Konten Digital</title>
+    <title>Magish Studio - Jasa Lokalisasi Konten EN ↔ ID</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Inter & Montserrat -->
@@ -19,20 +19,21 @@
                 extend: {
                     colors: {
                         navy: {
-                            900: '#070B19',
-                            800: '#0B132B',
-                            700: '#1C2541',
-                            600: '#2A365C'
+                            950: '#070A1C',
+                            900: '#0B0F28',
+                            800: '#121838',
+                            700: '#1D2654',
+                            600: '#2A3775'
                         },
                         purple: {
-                            magic: '#7B2CBF',
-                            bright: '#9D4EDD',
-                            glow: '#C77DFF'
+                            magic: '#7C4DFF',
+                            bright: '#9D6BFF',
+                            glow: '#C09EFF'
                         },
                         gold: {
-                            magic: '#FFC300',
-                            bright: '#FFD60A',
-                            accent: '#FFB703'
+                            magic: '#FFB703',
+                            bright: '#FFC107',
+                            soft: '#FFE082'
                         }
                     },
                     fontFamily: {
@@ -45,9 +46,8 @@
     </script>
 
     <style>
-        /* Custom CSS effects and glowing elements */
         body {
-            background-color: #070B19;
+            background-color: #0B0F28;
             color: #F8FAFC;
             font-family: 'Inter', sans-serif;
             overflow-x: hidden;
@@ -58,10 +58,10 @@
         }
 
         .glass-card {
-            background: rgba(28, 37, 65, 0.55);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(157, 78, 221, 0.18);
+            background: rgba(18, 24, 56, 0.65);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(124, 77, 255, 0.2);
         }
 
         .glass-card-hover {
@@ -70,41 +70,35 @@
 
         .glass-card-hover:hover {
             transform: translateY(-5px);
-            border-color: rgba(255, 195, 0, 0.4);
-            box-shadow: 0 10px 30px -10px rgba(123, 44, 191, 0.35);
+            border-color: rgba(255, 183, 3, 0.5);
+            box-shadow: 0 12px 30px -10px rgba(124, 77, 255, 0.35);
         }
 
         .text-gradient-gold {
-            background: linear-gradient(135deg, #FFD60A 0%, #FFB703 50%, #FF9100 100%);
+            background: linear-gradient(135deg, #FFC107 0%, #FFB703 50%, #FB8500 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .text-gradient-magic {
-            background: linear-gradient(135deg, #C77DFF 0%, #9D4EDD 50%, #7B2CBF 100%);
+            background: linear-gradient(135deg, #C09EFF 0%, #9D6BFF 50%, #7C4DFF 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .bg-gradient-magic {
-            background: linear-gradient(135deg, #7B2CBF 0%, #5A189A 100%);
-        }
-
         .bg-gradient-gold {
-            background: linear-gradient(135deg, #FFC300 0%, #FFB703 100%);
+            background: linear-gradient(135deg, #FFB703 0%, #FFC107 100%);
         }
 
-        /* Glowing Animations */
         @keyframes pulseGlow {
-            0%, 100% { opacity: 0.4; transform: scale(1); }
-            50% { opacity: 0.8; transform: scale(1.08); }
+            0%, 100% { opacity: 0.35; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.08); }
         }
 
         .glow-sphere {
             animation: pulseGlow 6s infinite ease-in-out;
         }
 
-        /* Magic wand sparkle animation */
         @keyframes sparkleRotate {
             0% { transform: rotate(0deg) scale(1); }
             50% { transform: rotate(180deg) scale(1.15); }
@@ -115,19 +109,18 @@
             animation: sparkleRotate 8s infinite linear;
         }
 
-        /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #070B19;
+            background: #0B0F28;
         }
         ::-webkit-scrollbar-thumb {
-            background: #1C2541;
+            background: #1D2654;
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #7B2CBF;
+            background: #7C4DFF;
         }
     </style>
 </head>
@@ -138,21 +131,17 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 
-                <!-- Brand Logo (Matching User Provided Logo) -->
+                <!-- Brand Logo -->
                 <a href="#" class="flex items-center gap-3 group">
                     <div class="relative w-11 h-11 flex items-center justify-center bg-navy-800 rounded-xl border border-purple-magic/40 p-1 group-hover:border-gold-magic transition-colors">
-                        <!-- SVG Logo Icon based on image -->
                         <svg viewBox="0 0 100 100" class="w-full h-full text-purple-bright" fill="none" stroke="currentColor">
-                            <!-- Globe Grid Lines -->
-                            <circle cx="50" cy="50" r="38" stroke="#9D4EDD" stroke-width="3.5" />
-                            <ellipse cx="50" cy="50" rx="38" ry="16" stroke="#9D4EDD" stroke-width="2.5" />
-                            <line x1="50" y1="12" x2="50" y2="88" stroke="#9D4EDD" stroke-width="2.5" />
-                            <line x1="12" y1="50" x2="88" y2="50" stroke="#9D4EDD" stroke-width="2.5" />
-                            <!-- Magic Wand -->
-                            <line x1="22" y1="78" x2="68" y2="30" stroke="#FFC300" stroke-width="5" stroke-linecap="round" />
+                            <circle cx="50" cy="50" r="38" stroke="#9D6BFF" stroke-width="3.5" />
+                            <ellipse cx="50" cy="50" rx="38" ry="16" stroke="#9D6BFF" stroke-width="2.5" />
+                            <line x1="50" y1="12" x2="50" y2="88" stroke="#9D6BFF" stroke-width="2.5" />
+                            <line x1="12" y1="50" x2="88" y2="50" stroke="#9D6BFF" stroke-width="2.5" />
+                            <line x1="22" y1="78" x2="68" y2="30" stroke="#FFB703" stroke-width="5" stroke-linecap="round" />
                             <line x1="22" y1="78" x2="35" y2="65" stroke="#E2E8F0" stroke-width="6" stroke-linecap="round" />
-                            <!-- Sparkle Star -->
-                            <path d="M72 15 L74 24 L83 26 L74 28 L72 37 L70 28 L61 26 L70 24 Z" fill="#FFC300" stroke="none" class="sparkle-icon" />
+                            <path d="M72 15 L74 24 L83 26 L74 28 L72 37 L70 28 L61 26 L70 24 Z" fill="#FFB703" stroke="none" class="sparkle-icon" />
                         </svg>
                     </div>
                     <div class="flex flex-col">
@@ -165,22 +154,24 @@
                 <nav class="hidden md:flex items-center space-x-8 font-medium text-sm">
                     <a href="#beranda" class="text-gray-300 hover:text-gold-magic transition-colors py-2">Beranda</a>
                     <a href="#layanan" class="text-gray-300 hover:text-gold-magic transition-colors py-2">Layanan</a>
-                    <a href="#kalkulator" class="text-gray-300 hover:text-gold-magic transition-colors py-2">Kalkulator</a>
+                    <a href="#kalkulator" class="text-gray-300 hover:text-gold-magic transition-colors py-2">Kalkulator Cost</a>
                     <a href="#keunggulan" class="text-gray-300 hover:text-gold-magic transition-colors py-2">Mengapa Kami</a>
-                    <a href="#portfolio" class="text-gray-300 hover:text-gold-magic transition-colors py-2">Portfolio</a>
                     <a href="#kontak" class="text-gray-300 hover:text-gold-magic transition-colors py-2">Kontak</a>
                 </nav>
 
                 <!-- CTA Header Button -->
-                <div class="hidden md:flex items-center">
-                    <a href="#kontak" class="px-5 py-2.5 rounded-xl font-semibold text-xs tracking-wider uppercase bg-gradient-gold text-navy-900 hover:shadow-lg hover:shadow-gold-magic/20 transition-all hover:-translate-y-0.5">
+                <div class="hidden md:flex items-center gap-3">
+                    <span class="px-3 py-1 rounded-full bg-purple-magic/20 border border-purple-bright/40 text-[11px] font-semibold text-gold-bright uppercase tracking-wider">
+                        EN ↔ ID ONLY
+                    </span>
+                    <a href="#kontak" class="px-5 py-2.5 rounded-xl font-semibold text-xs tracking-wider uppercase bg-gradient-gold text-navy-950 hover:shadow-lg hover:shadow-gold-magic/20 transition-all hover:-translate-y-0.5">
                         Konsultasi Gratis
                     </a>
                 </div>
 
                 <!-- Mobile Menu Button -->
                 <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="p-2 rounded-lg text-gray-300 hover:text-white hover:bg-navy-700 focus:outline-none">
+                    <button id="mobile-menu-btn" class="p-2 rounded-lg text-gray-300 hover:text-white hover:bg-navy-800 focus:outline-none">
                         <i class="fa-solid fa-bars text-xl"></i>
                     </button>
                 </div>
@@ -190,12 +181,11 @@
         <!-- Mobile Menu Dropdown -->
         <div id="mobile-menu" class="hidden md:hidden glass-card border-b border-navy-700/50 px-4 pt-2 pb-6 space-y-3">
             <a href="#beranda" class="block py-2 text-gray-200 hover:text-gold-magic font-medium">Beranda</a>
-            <a href="#layanan" class="block py-2 text-gray-200 hover:text-gold-magic font-medium">Layanan</a>
-            <a href="#kalkulator" class="block py-2 text-gray-200 hover:text-gold-magic font-medium">Kalkulator Cost</a>
+            <a href="#layanan" class="block py-2 text-gray-200 hover:text-gold-magic font-medium">Layanan Specilist</a>
+            <a href="#kalkulator" class="block py-2 text-gray-200 hover:text-gold-magic font-medium">Kalkulator Estimasi</a>
             <a href="#keunggulan" class="block py-2 text-gray-200 hover:text-gold-magic font-medium">Mengapa Kami</a>
-            <a href="#portfolio" class="block py-2 text-gray-200 hover:text-gold-magic font-medium">Portfolio</a>
             <a href="#kontak" class="block py-2 text-gray-200 hover:text-gold-magic font-medium">Kontak</a>
-            <a href="#kontak" class="block text-center w-full py-3 mt-4 rounded-xl font-semibold text-xs tracking-wider uppercase bg-gradient-gold text-navy-900">
+            <a href="#kontak" class="block text-center w-full py-3 mt-4 rounded-xl font-semibold text-xs tracking-wider uppercase bg-gradient-gold text-navy-950">
                 Konsultasi Gratis
             </a>
         </div>
@@ -203,90 +193,71 @@
 
     <!-- HERO SECTION -->
     <section id="beranda" class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
-        <!-- Glowing Ambient Background Orbs -->
         <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-purple-magic/20 rounded-full blur-[120px] pointer-events-none glow-sphere"></div>
         <div class="absolute top-1/3 right-10 w-[300px] h-[300px] bg-gold-magic/10 rounded-full blur-[100px] pointer-events-none"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid lg:grid-cols-12 gap-12 items-center">
                 
-                <!-- Left Hero Column: Content -->
+                <!-- Left Hero Column -->
                 <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
                     <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border border-purple-bright/30 text-xs font-semibold text-gold-bright uppercase tracking-widest">
                         <i class="fa-solid fa-wand-magic-sparkles text-purple-bright"></i>
-                        <span>Magish Localization Agency</span>
+                        <span>Spesialis Lokalisasi Bahasa Inggris ↔ Indonesia</span>
                     </div>
 
                     <h1 class="font-heading font-black text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-tight">
-                        Menghubungkan Konten Anda ke Pasar Global dengan <span class="text-gradient-gold">Sentuhan Magis</span> Lokalisasi
+                        Lokalisasi Presisi untuk <span class="text-gradient-gold">Dokumen, Novel, Manga & Subtitle</span>
                     </h1>
 
                     <p class="text-gray-300 text-lg sm:text-xl max-w-2xl font-light leading-relaxed mx-auto lg:mx-0">
-                        Bawa Game, Aplikasi, Website, dan Media Anda melampaui batas bahasa. Kami tidak hanya menerjemahkan, kami menyesuaikan budaya untuk pengalaman audiens global yang autentik.
+                        Magish Studio berfokus penuh pada pasangan bahasa **Inggris & Indonesia**. Kami menghidupkan dokumen formal, novel literatur, balon kata manga, hingga takarir anime & film dengan sentuhan lokal yang alami dan natural.
                     </p>
 
-                    <!-- CTA Group -->
-                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
-                        <a href="#kontak" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-sm tracking-wider uppercase bg-gradient-gold text-navy-900 hover:shadow-xl hover:shadow-gold-magic/20 transition-all hover:-translate-y-1 text-center">
-                            <i class="fa-solid fa-paper-plane mr-2"></i> Mulai Proyek Anda
-                        </a>
-                        <a href="#layanan" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-sm tracking-wider uppercase glass-card hover:border-purple-glow text-white transition-all text-center hover:-translate-y-1">
-                            <i class="fa-solid fa-layer-group mr-2 text-purple-bright"></i> Lihat Layanan
-                        </a>
+                    <!-- Target Scope Badges -->
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-2 pt-1 text-xs">
+                        <span class="px-3 py-1.5 rounded-lg bg-navy-800 border border-purple-magic/30 text-purple-glow font-medium"><i class="fa-solid fa-file-contract text-gold-magic mr-1.5"></i> Dokumen Resmi</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-navy-800 border border-purple-magic/30 text-purple-glow font-medium"><i class="fa-solid fa-book-open text-gold-magic mr-1.5"></i> Novel & Literatur</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-navy-800 border border-purple-magic/30 text-purple-glow font-medium"><i class="fa-solid fa-book-journal-whills text-gold-magic mr-1.5"></i> Manga & Komik</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-navy-800 border border-purple-magic/30 text-purple-glow font-medium"><i class="fa-solid fa-closed-captioning text-gold-magic mr-1.5"></i> Subtitle Film & Anime</span>
                     </div>
 
-                    <!-- Trust Indicators -->
-                    <div class="pt-8 border-t border-navy-700/60 grid grid-cols-3 gap-4 text-center lg:text-left">
-                        <div>
-                            <div class="font-heading font-extrabold text-2xl lg:text-3xl text-gradient-gold">50+</div>
-                            <div class="text-xs text-gray-400 mt-1">Bahasa Target</div>
-                        </div>
-                        <div>
-                            <div class="font-heading font-extrabold text-2xl lg:text-3xl text-purple-glow">99.8%</div>
-                            <div class="text-xs text-gray-400 mt-1">Akurasi Kultural</div>
-                        </div>
-                        <div>
-                            <div class="font-heading font-extrabold text-2xl lg:text-3xl text-gradient-gold">10M+</div>
-                            <div class="text-xs text-gray-400 mt-1">Kata Terlokalisasi</div>
-                        </div>
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#kalkulator" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-sm tracking-wider uppercase bg-gradient-gold text-navy-950 hover:shadow-xl hover:shadow-gold-magic/20 transition-all hover:-translate-y-1 text-center">
+                            <i class="fa-solid fa-calculator mr-2"></i> Hitung Estimasi Biaya
+                        </a>
+                        <a href="#layanan" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-sm tracking-wider uppercase glass-card hover:border-purple-glow text-white transition-all text-center hover:-translate-y-1">
+                            <i class="fa-solid fa-list-check mr-2 text-purple-bright"></i> Detail Layanan
+                        </a>
                     </div>
                 </div>
 
-                <!-- Right Hero Column: Visual Logo Banner -->
+                <!-- Right Hero Column: Visual Studio Graphic -->
                 <div class="lg:col-span-5 flex justify-center relative">
                     <div class="relative w-full max-w-md aspect-square rounded-3xl glass-card p-8 flex flex-col items-center justify-center border-2 border-purple-magic/30 shadow-2xl shadow-purple-900/40 group hover:border-gold-magic/50 transition-all">
                         
-                        <!-- Glowing backdrop ring -->
                         <div class="absolute inset-4 rounded-2xl border border-dashed border-purple-bright/20 animate-spin" style="animation-duration: 25s;"></div>
 
-                        <!-- Big Interactive Central Graphic (Recreating User Logo in High Detail) -->
-                        <div class="relative w-56 h-56 flex items-center justify-center mb-6">
-                            <svg viewBox="0 0 200 200" class="w-full h-full drop-shadow-[0_0_20px_rgba(157,78,221,0.5)]" fill="none">
-                                <!-- Globe Background Outer Circle -->
-                                <circle cx="100" cy="100" r="75" stroke="#7B2CBF" stroke-width="6" fill="#0B132B" />
-                                
-                                <!-- Globe Grid Latitudes & Longitudes -->
-                                <ellipse cx="100" cy="100" rx="75" ry="32" stroke="#9D4EDD" stroke-width="4" opacity="0.8" />
-                                <ellipse cx="100" cy="100" rx="32" ry="75" stroke="#9D4EDD" stroke-width="4" opacity="0.8" />
-                                <line x1="100" y1="25" x2="100" y2="175" stroke="#9D4EDD" stroke-width="4" opacity="0.8" />
-                                <line x1="25" y1="100" x2="175" y2="100" stroke="#9D4EDD" stroke-width="4" opacity="0.8" />
-                                
-                                <!-- Magic Wand Stick -->
-                                <line x1="45" y1="155" x2="135" y2="65" stroke="#FFC300" stroke-width="10" stroke-linecap="round" />
+                        <div class="relative w-52 h-52 flex items-center justify-center mb-4">
+                            <svg viewBox="0 0 200 200" class="w-full h-full drop-shadow-[0_0_20px_rgba(124,77,255,0.5)]" fill="none">
+                                <circle cx="100" cy="100" r="75" stroke="#7C4DFF" stroke-width="6" fill="#121838" />
+                                <ellipse cx="100" cy="100" rx="75" ry="32" stroke="#9D6BFF" stroke-width="4" opacity="0.8" />
+                                <ellipse cx="100" cy="100" rx="32" ry="75" stroke="#9D6BFF" stroke-width="4" opacity="0.8" />
+                                <line x1="100" y1="25" x2="100" y2="175" stroke="#9D6BFF" stroke-width="4" opacity="0.8" />
+                                <line x1="25" y1="100" x2="175" y2="100" stroke="#9D6BFF" stroke-width="4" opacity="0.8" />
+                                <line x1="45" y1="155" x2="135" y2="65" stroke="#FFB703" stroke-width="10" stroke-linecap="round" />
                                 <line x1="45" y1="155" x2="70" y2="130" stroke="#F1F5F9" stroke-width="12" stroke-linecap="round" />
-                                
-                                <!-- Sparkling Magic Star -->
-                                <path d="M145 30 L150 48 L168 53 L150 58 L145 76 L140 58 L122 53 L140 48 Z" fill="#FFC300" class="sparkle-icon" />
-                                <path d="M165 75 L167 83 L175 85 L167 87 L165 95 L163 87 L155 85 L163 83 Z" fill="#FFD60A" opacity="0.9" />
+                                <path d="M145 30 L150 48 L168 53 L150 58 L145 76 L140 58 L122 53 L140 48 Z" fill="#FFB703" class="sparkle-icon" />
                             </svg>
                         </div>
 
                         <h2 class="font-heading font-black text-2xl tracking-widest text-white text-center">
                             MAGISH STUDIO
                         </h2>
-                        <div class="h-1 w-24 bg-gold-magic rounded-full mt-2 mb-3"></div>
-                        <p class="text-xs uppercase tracking-widest text-gray-400 font-semibold text-center">
-                            Digital Content Localization Agency
+                        <div class="h-1 w-20 bg-gold-magic rounded-full mt-2 mb-2"></div>
+                        <p class="text-xs uppercase tracking-widest text-purple-glow font-semibold text-center">
+                            English ↔ Indonesian Localization
                         </p>
                     </div>
                 </div>
@@ -295,79 +266,90 @@
         </div>
     </section>
 
-    <!-- SERVICES SECTION -->
-    <section id="layanan" class="py-20 bg-navy-800/60 relative">
+    <!-- SERVICES SECTION (4 Core Services) -->
+    <section id="layanan" class="py-20 bg-navy-900/80 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-xs font-semibold text-gold-magic uppercase tracking-widest mb-3">
-                    Layanan Utama Kami
+                <span class="text-xs font-semibold text-gold-magic uppercase tracking-widest">Spesialisasi Terfokus</span>
+                <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-white mt-2">
+                    Layanan Lokalisasi Konten Digital
                 </h2>
-                <p class="font-heading font-extrabold text-3xl sm:text-4xl text-white">
-                    Solusi Lokalisasi Komprehensif untuk Semua Media Digital
-                </p>
+                <p class="text-gray-300 text-sm mt-3">Kami tidak menawarkan segalanya, kami fokus menyempurnakan 4 bidang konten ini dari dan ke Bahasa Inggris & Indonesia.</p>
                 <div class="w-16 h-1 bg-purple-bright mx-auto mt-4 rounded-full"></div>
             </div>
 
-            <!-- Services Grid -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Services 2x2 Grid -->
+            <div class="grid md:grid-cols-2 gap-8">
                 
-                <!-- Service 1: Game Localization -->
+                <!-- Service 1: Dokumen -->
                 <div class="glass-card p-8 rounded-2xl glass-card-hover relative group">
-                    <div class="w-14 h-14 rounded-xl bg-purple-magic/20 border border-purple-bright/40 flex items-center justify-center text-gold-magic text-2xl mb-6 group-hover:bg-purple-magic group-hover:text-white transition-colors">
-                        <i class="fa-solid fa-gamepad"></i>
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="w-14 h-14 rounded-xl bg-purple-magic/20 border border-purple-bright/40 flex items-center justify-center text-gold-magic text-2xl group-hover:bg-purple-magic group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-file-contract"></i>
+                        </div>
+                        <span class="text-[10px] font-bold text-purple-glow bg-navy-800 border border-purple-bright/20 px-3 py-1 rounded-full uppercase">Per Kata</span>
                     </div>
-                    <h3 class="font-heading font-bold text-xl text-white mb-3">Lokalisasi Game</h3>
+                    <h3 class="font-heading font-bold text-xl text-white mb-3">Lokalisasi Dokumen</h3>
                     <p class="text-gray-300 text-sm leading-relaxed mb-4">
-                        Penerjemahan teks in-game, antarmuka (UI/UX), narasi cerita, skrip lore, hingga adaptasi istilah gaming sesuai budaya pasar target.
+                        Penerjemahan dan penyesuaian dokumen bisnis, jurnal akademik, artikel, proposal, hingga dokumen legal. Mempertahankan kerapian layout asli dokumen Anda.
                     </p>
-                    <ul class="text-xs text-gray-400 space-y-2">
-                        <li><i class="fa-solid fa-check text-gold-magic mr-1.5"></i> LQA (Language Quality Assurance)</li>
-                        <li><i class="fa-solid fa-check text-gold-magic mr-1.5"></i> Adaptasi Humor & Karakter</li>
+                    <ul class="text-xs text-gray-400 space-y-2 border-t border-navy-700/60 pt-4">
+                        <li><i class="fa-solid fa-check text-gold-magic mr-2"></i> Terminology Consistency Management</li>
+                        <li><i class="fa-solid fa-check text-gold-magic mr-2"></i> Format PDF, DOCX, PPTX Presisi</li>
                     </ul>
                 </div>
 
-                <!-- Service 2: App & Web Localization -->
+                <!-- Service 2: Novel -->
                 <div class="glass-card p-8 rounded-2xl glass-card-hover relative group">
-                    <div class="w-14 h-14 rounded-xl bg-purple-magic/20 border border-purple-bright/40 flex items-center justify-center text-gold-magic text-2xl mb-6 group-hover:bg-purple-magic group-hover:text-white transition-colors">
-                        <i class="fa-solid fa-code"></i>
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="w-14 h-14 rounded-xl bg-purple-magic/20 border border-purple-bright/40 flex items-center justify-center text-gold-magic text-2xl group-hover:bg-purple-magic group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-book-open"></i>
+                        </div>
+                        <span class="text-[10px] font-bold text-purple-glow bg-navy-800 border border-purple-bright/20 px-3 py-1 rounded-full uppercase">Per Kata</span>
                     </div>
-                    <h3 class="font-heading font-bold text-xl text-white mb-3">Web & Aplikasi</h3>
+                    <h3 class="font-heading font-bold text-xl text-white mb-3">Novel & Literatur</h3>
                     <p class="text-gray-300 text-sm leading-relaxed mb-4">
-                        Adaptasi ekosistem SaaS, e-commerce, dan aplikasi mobile. Pengintegrasian file .json, .po, .xml tanpa merusak struktur kode.
+                        Adaptasi karya sastra, web novel, fiksi ilmiah, dan komersial. Menyelaraskan diksi, idiom, humor, dan nada emosional karakter agar terasa alami dibaca audiens lokal.
                     </p>
-                    <ul class="text-xs text-gray-400 space-y-2">
-                        <li><i class="fa-solid fa-check text-gold-magic mr-1.5"></i> SEO Multibahasa</li>
-                        <li><i class="fa-solid fa-check text-gold-magic mr-1.5"></i> Format Tanggal, Mata Uang & Layout</li>
+                    <ul class="text-xs text-gray-400 space-y-2 border-t border-navy-700/60 pt-4">
+                        <li><i class="fa-solid fa-check text-gold-magic mr-2"></i> Adaptasi Gaya Bahasa & Nuansa Budaya</li>
+                        <li><i class="fa-solid fa-check text-gold-magic mr-2"></i> Pengeditan Sastra & Proofreading</li>
                     </ul>
                 </div>
 
-                <!-- Service 3: Dubbing & Subtitling -->
+                <!-- Service 3: Manga -->
                 <div class="glass-card p-8 rounded-2xl glass-card-hover relative group">
-                    <div class="w-14 h-14 rounded-xl bg-purple-magic/20 border border-purple-bright/40 flex items-center justify-center text-gold-magic text-2xl mb-6 group-hover:bg-purple-magic group-hover:text-white transition-colors">
-                        <i class="fa-solid fa-microphone-lines"></i>
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="w-14 h-14 rounded-xl bg-purple-magic/20 border border-purple-bright/40 flex items-center justify-center text-gold-magic text-2xl group-hover:bg-purple-magic group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-book-journal-whills"></i>
+                        </div>
+                        <span class="text-[10px] font-bold text-purple-glow bg-navy-800 border border-purple-bright/20 px-3 py-1 rounded-full uppercase">Per Halaman / Kata</span>
                     </div>
-                    <h3 class="font-heading font-bold text-xl text-white mb-3">Sulih Suara & Subtitle</h3>
+                    <h3 class="font-heading font-bold text-xl text-white mb-3">Manga, Komik & Webtoon</h3>
                     <p class="text-gray-300 text-sm leading-relaxed mb-4">
-                        Penerjemahan video promosi, e-learning, film, dan trailer. Didukung pengisi suara (Voice Over) profesional penutur asli.
+                        Lokalisasi percakapan dalam balon kata (speech bubbles), efek suara visual (SFX/Onomatope), serta penyesuaian konteks visual komik Jepang (Manga), Manhwa, atau Webtoon.
                     </p>
-                    <ul class="text-xs text-gray-400 space-y-2">
-                        <li><i class="fa-solid fa-check text-gold-magic mr-1.5"></i> Sync Subtitle (.SRT / .VTT)</li>
-                        <li><i class="fa-solid fa-check text-gold-magic mr-1.5"></i> Voice-Over Studio Quality</li>
+                    <ul class="text-xs text-gray-400 space-y-2 border-t border-navy-700/60 pt-4">
+                        <li><i class="fa-solid fa-check text-gold-magic mr-2"></i> Penerjemahan Balon Kata & SFX</li>
+                        <li><i class="fa-solid fa-check text-gold-magic mr-2"></i> Konsistensi Panggilan Karakter</li>
                     </ul>
                 </div>
 
-                <!-- Service 4: Transcreation & Marketing -->
+                <!-- Service 4: Subtitle / Takarir -->
                 <div class="glass-card p-8 rounded-2xl glass-card-hover relative group">
-                    <div class="w-14 h-14 rounded-xl bg-purple-magic/20 border border-purple-bright/40 flex items-center justify-center text-gold-magic text-2xl mb-6 group-hover:bg-purple-magic group-hover:text-white transition-colors">
-                        <i class="fa-solid fa-bullhorn"></i>
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="w-14 h-14 rounded-xl bg-purple-magic/20 border border-purple-bright/40 flex items-center justify-center text-gold-magic text-2xl group-hover:bg-purple-magic group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-closed-captioning"></i>
+                        </div>
+                        <span class="text-[10px] font-bold text-purple-glow bg-navy-800 border border-purple-bright/20 px-3 py-1 rounded-full uppercase">Per Menit Durasi</span>
                     </div>
-                    <h3 class="font-heading font-bold text-xl text-white mb-3">Pemasaran Transkultural</h3>
+                    <h3 class="font-heading font-bold text-xl text-white mb-3">Takarir (Subtitle) Film & Anime</h3>
                     <p class="text-gray-300 text-sm leading-relaxed mb-4">
-                        Gubahan kreatif pesan pemasaran (Transcreation) agar promosi produk Anda beresonansi kuat secara emosional dengan audiens lokal.
+                        Pembuatan takarir dengan timing (spotting) presisi, pembatasan karakter per baris (CPS/CPS limits), dan penerjemahan percakapan cepat tanpa menghilangkan makna inti.
                     </p>
-                    <ul class="text-xs text-gray-400 space-y-2">
-                        <li><i class="fa-solid fa-check text-gold-magic mr-1.5"></i> Copywriting Kampanye Iklan</li>
-                        <li><i class="fa-solid fa-check text-gold-magic mr-1.5"></i> Audit Sensitivitas Budaya</li>
+                    <ul class="text-xs text-gray-400 space-y-2 border-t border-navy-700/60 pt-4">
+                        <li><i class="fa-solid fa-check text-gold-magic mr-2"></i> Format File .SRT, .ASS, .VTT</li>
+                        <li><i class="fa-solid fa-check text-gold-magic mr-2"></i> Sinkronisasi Pacing & Reader Speed</li>
                     </ul>
                 </div>
 
@@ -375,74 +357,88 @@
         </div>
     </section>
 
-    <!-- INTERACTIVE COST CALCULATOR SECTION -->
+    <!-- INTERACTIVE COST CALCULATOR -->
     <section id="kalkulator" class="py-20 relative">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="glass-card p-8 sm:p-12 rounded-3xl border-2 border-purple-magic/30 relative overflow-hidden">
                 
                 <div class="text-center mb-10">
                     <span class="px-3 py-1 rounded-full bg-purple-magic/20 text-gold-magic text-xs font-semibold uppercase tracking-wider">Estimasi Instan</span>
-                    <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-white mt-2">Kalkulator Perkiraan Biaya</h2>
-                    <p class="text-gray-300 text-sm mt-2">Hitung perkiraan harga dan durasi pengerjaan lokalisasi proyek Anda dalam hitungan detik.</p>
+                    <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-white mt-2">Kalkulator Estimasi Biaya</h2>
+                    <p class="text-gray-300 text-sm mt-2">Pilih jenis konten dan tentukan volume proyek Anda untuk melihat estimasi harga.</p>
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-8 items-center">
                     
-                    <!-- Calculator Inputs -->
+                    <!-- Inputs -->
                     <div class="space-y-6">
+                        
+                        <!-- Language Pair Selection -->
                         <div>
-                            <label class="block text-sm font-semibold text-gray-200 mb-2">Tipe Konten Digital</label>
-                            <select id="calc-content-type" class="w-full bg-navy-800 border border-purple-bright/30 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold-magic transition-colors">
-                                <option value="game">Game (In-game text, UI & Lore)</option>
-                                <option value="app">Aplikasi Mobile / Software SaaS</option>
-                                <option value="web">Website & E-Commerce</option>
-                                <option value="video">Skrip Video / Subtitle</option>
+                            <label class="block text-xs font-semibold text-gray-300 mb-2 uppercase">Pasangan Bahasa</label>
+                            <div class="grid grid-cols-2 gap-3" id="pair-buttons">
+                                <button type="button" data-pair="en-id" class="pair-btn active border-2 border-gold-magic bg-purple-magic/30 text-white font-bold py-2.5 rounded-xl text-center text-xs">
+                                    🇬🇧 EN → 🇮🇩 ID
+                                </button>
+                                <button type="button" data-pair="id-en" class="pair-btn border border-purple-bright/30 bg-navy-800 text-gray-300 font-bold py-2.5 rounded-xl text-center text-xs">
+                                    🇮🇩 ID → 🇬🇧 EN
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Content Type Selection -->
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 mb-2 uppercase">Jenis Konten</label>
+                            <select id="calc-content-type" class="w-full bg-navy-800 border border-purple-bright/30 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-gold-magic transition-colors">
+                                <option value="dokumen">Dokumen (Bisnis/Akademik/Legal)</option>
+                                <option value="novel">Novel & Literatur Fiksi/Non-fiksi</option>
+                                <option value="manga">Manga / Komik / Manhwa</option>
+                                <option value="subtitle">Takarir (Subtitle) Film & Anime</option>
                             </select>
                         </div>
 
+                        <!-- Volume Input Slider (Dynamic Label) -->
                         <div>
-                            <label class="block text-sm font-semibold text-gray-200 mb-2">Estimasi Jumlah Kata: <span id="word-count-label" class="text-gold-magic font-bold">5,000</span> Kata</label>
-                            <input type="range" id="calc-words" min="500" max="50000" step="500" value="5000" class="w-full h-2 bg-navy-700 rounded-lg appearance-none cursor-pointer accent-gold-magic">
-                            <div class="flex justify-between text-xs text-gray-400 mt-1">
-                                <span>500 kata</span>
-                                <span>25.000 kata</span>
-                                <span>50.000+ kata</span>
+                            <div class="flex justify-between text-sm font-semibold text-gray-200 mb-2">
+                                <span id="volume-label-title">Jumlah Kata:</span>
+                                <span id="volume-value-label" class="text-gold-magic font-bold">2,500 Kata</span>
+                            </div>
+                            <input type="range" id="calc-volume" min="100" max="20000" step="100" value="2500" class="w-full h-2 bg-navy-700 rounded-lg appearance-none cursor-pointer accent-gold-magic">
+                            <div class="flex justify-between text-xs text-gray-400 mt-1" id="volume-minmax-labels">
+                                <span>100 kata</span>
+                                <span>10.000 kata</span>
+                                <span>20.000+ kata</span>
                             </div>
                         </div>
 
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-200 mb-2">Jumlah Bahasa Target</label>
-                            <div class="grid grid-cols-4 gap-2" id="lang-buttons">
-                                <button type="button" data-langs="1" class="lang-btn active border-2 border-gold-magic bg-purple-magic/30 text-white font-bold py-2 rounded-xl text-center text-sm">1 Bahasa</button>
-                                <button type="button" data-langs="2" class="lang-btn border border-purple-bright/30 bg-navy-800 text-gray-300 font-bold py-2 rounded-xl text-center text-sm">2 Bahasa</button>
-                                <button type="button" data-langs="3" class="lang-btn border border-purple-bright/30 bg-navy-800 text-gray-300 font-bold py-2 rounded-xl text-center text-sm">3 Bahasa</button>
-                                <button type="button" data-langs="5" class="lang-btn border border-purple-bright/30 bg-navy-800 text-gray-300 font-bold py-2 rounded-xl text-center text-sm">5+ Bahasa</button>
-                            </div>
-                        </div>
                     </div>
 
-                    <!-- Calculator Result Box -->
-                    <div class="bg-navy-900/80 p-6 sm:p-8 rounded-2xl border border-purple-bright/30 flex flex-col justify-between h-full text-center md:text-left">
+                    <!-- Result Box -->
+                    <div class="bg-navy-950/80 p-6 sm:p-8 rounded-2xl border border-purple-bright/30 flex flex-col justify-between h-full text-center md:text-left">
                         <div>
-                            <span class="text-xs text-gray-400 uppercase font-semibold tracking-wider">Estimasi Investasi</span>
+                            <span class="text-xs text-gray-400 uppercase font-semibold tracking-wider">Estimasi Investasi Proyek</span>
                             <div class="text-3xl sm:text-4xl font-heading font-black text-gradient-gold mt-2 mb-1" id="calc-total-price">
-                                Rp 3.750.000
+                                Rp 375.000
                             </div>
-                            <p class="text-xs text-gray-400">*Harga akhir dapat bervariasi tergantung kompleksitas istilah.</p>
+                            <p class="text-[11px] text-gray-400 leading-tight mt-1" id="rate-info-text">*Tarif dasar: Rp 150 / kata</p>
                         </div>
 
-                        <div class="my-6 pt-6 border-t border-navy-700 space-y-3">
-                            <div class="flex justify-between text-sm">
-                                <span class="text-gray-400">Estimasi Waktu:</span>
-                                <span class="text-white font-semibold" id="calc-eta">3 - 4 Hari Kerja</span>
+                        <div class="my-6 pt-6 border-t border-navy-700 space-y-3 text-sm">
+                            <div class="flex justify-between">
+                                <span class="text-gray-400">Estimasi Waktu Pengerjaan:</span>
+                                <span class="text-white font-semibold" id="calc-eta">2 - 3 Hari Kerja</span>
                             </div>
-                            <div class="flex justify-between text-sm">
-                                <span class="text-gray-400">LQA Testing:</span>
-                                <span class="text-gold-magic font-semibold">Termasuk (Gratis)</span>
+                            <div class="flex justify-between">
+                                <span class="text-gray-400">Jaminan Kualitas:</span>
+                                <span class="text-gold-magic font-semibold">Proofreading Native</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-400">Format Output:</span>
+                                <span class="text-purple-glow font-semibold" id="format-output-text">DOCX / PDF Presisi</span>
                             </div>
                         </div>
 
-                        <a href="#kontak" onclick="applyQuoteToForm()" class="w-full py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider bg-gradient-gold text-navy-900 hover:shadow-lg transition-all text-center block">
+                        <a href="#kontak" onclick="applyQuoteToForm()" class="w-full py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider bg-gradient-gold text-navy-950 hover:shadow-lg transition-all text-center block">
                             Klaim Penawaran Ini <i class="fa-solid fa-arrow-right ml-1"></i>
                         </a>
                     </div>
@@ -453,21 +449,21 @@
         </div>
     </section>
 
-    <!-- WHY CHOOSE US SECTION -->
-    <section id="keunggulan" class="py-20 bg-navy-800/40 relative">
+    <!-- WHY CHOOSE US -->
+    <section id="keunggulan" class="py-20 bg-navy-900/60 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-12 gap-12 items-center">
                 
                 <div class="lg:col-span-5 space-y-6">
                     <span class="text-xs font-semibold text-gold-magic uppercase tracking-widest">Keunggulan Magish Studio</span>
                     <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-white leading-tight">
-                        Mengapa Perusahaan Global Mempercayakan Konten Mereka Kepada Kami?
+                        Mengapa Memilih Kami untuk Lokalisasi EN ↔ ID?
                     </h2>
                     <p class="text-gray-300 text-sm leading-relaxed">
-                        Penerjemahan mesin sering kali gagal menangkap nuansa lokal dan humor. Di Magish Studio, kami menggabungkan keahlian linguis penutur asli dengan alur kerja teknologi modern.
+                        Kami tidak menggunakan terjemahan mesin otomatis tanpa pengawasan. Setiap baris kalimat dirangkai oleh linguis manusia yang memahami konteks budaya kedua negara.
                     </p>
                     <a href="#kontak" class="inline-flex items-center gap-2 text-gold-magic font-semibold hover:underline text-sm">
-                        <span>Jadwalkan Diskusi Tim</span>
+                        <span>Konsultasikan Proyek Anda</span>
                         <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
@@ -476,41 +472,41 @@
                     
                     <div class="glass-card p-6 rounded-2xl">
                         <div class="w-12 h-12 rounded-lg bg-purple-magic/30 text-gold-magic flex items-center justify-center text-xl mb-4">
-                            <i class="fa-solid fa-earth-asia"></i>
+                            <i class="fa-solid fa-language"></i>
                         </div>
-                        <h3 class="font-heading font-bold text-lg text-white mb-2">Penutur Asli (Native Linguists)</h3>
+                        <h3 class="font-heading font-bold text-lg text-white mb-2">Akurasi Budaya High-Level</h3>
                         <p class="text-gray-300 text-xs leading-relaxed">
-                            Dikerjakan langsung oleh penerjemah yang merupakan penutur asli di negara target untuk menjamin kelancaran bahasa yang alami.
+                            Menerjemahkan makna kultural, gaya percakapan santai, maupun terminologi baku tanpa terkesan kaku atau rancu.
                         </p>
                     </div>
 
                     <div class="glass-card p-6 rounded-2xl">
                         <div class="w-12 h-12 rounded-lg bg-purple-magic/30 text-gold-magic flex items-center justify-center text-xl mb-4">
-                            <i class="fa-solid fa-shield-halved"></i>
+                            <i class="fa-solid fa-[#FFB703] fa-stopwatch"></i>
                         </div>
-                        <h3 class="font-heading font-bold text-lg text-white mb-2">LQA & QA Ketat</h3>
+                        <h3 class="font-heading font-bold text-lg text-white mb-2">Pacing Subtitle Pas</h3>
                         <p class="text-gray-300 text-xs leading-relaxed">
-                            Proses 3 tahap: Translation, Editing, dan Proofreading (TEP) serta pengujian tampilan langsung di dalam antarmuka software.
+                            Pengerjaan takarir film/anime memperhatikan kecepatan membaca penonton dan keterbatasan durasi pada layar.
                         </p>
                     </div>
 
                     <div class="glass-card p-6 rounded-2xl">
                         <div class="w-12 h-12 rounded-lg bg-purple-magic/30 text-gold-magic flex items-center justify-center text-xl mb-4">
-                            <i class="fa-solid fa-bolt"></i>
+                            <i class="fa-solid fa-file-pen"></i>
                         </div>
-                        <h3 class="font-heading font-bold text-lg text-white mb-2">Penyelesaian Tepat Waktu</h3>
+                        <h3 class="font-heading font-bold text-lg text-white mb-2">Format Manga & Dokumen Presisi</h3>
                         <p class="text-gray-300 text-xs leading-relaxed">
-                            Manajemen proyek yang terstruktur memastikan deadline peluncuran game atau aplikasi Anda tidak akan pernah tertunda.
+                            Pemasangan teks pada balon kata manga rapi dan layout dokumen asli tetap terjaga tanpa berantakan.
                         </p>
                     </div>
 
                     <div class="glass-card p-6 rounded-2xl">
                         <div class="w-12 h-12 rounded-lg bg-purple-magic/30 text-gold-magic flex items-center justify-center text-xl mb-4">
-                            <i class="fa-solid fa-lock"></i>
+                            <i class="fa-solid fa-user-shield"></i>
                         </div>
-                        <h3 class="font-heading font-bold text-lg text-white mb-2">Kerahasiaan Terjamin (NDA)</h3>
+                        <h3 class="font-heading font-bold text-lg text-white mb-2">Kerahasiaan Naskah (NDA)</h3>
                         <p class="text-gray-300 text-xs leading-relaxed">
-                            Seluruh aset rahasia sebelum tanggal rilis dilindungi penuh dengan perjanjian kerahasiaan hukum kelas industri.
+                            Naskah novel yang belum diterbitkan atau dokumen internal perusahaan Anda terjamin aman dengan NDA.
                         </p>
                     </div>
 
@@ -520,131 +516,54 @@
         </div>
     </section>
 
-    <!-- PORTFOLIO SECTION -->
-    <section id="portfolio" class="py-20 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <span class="text-xs font-semibold text-gold-magic uppercase tracking-widest">Studi Kasus & Karya</span>
-                <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-white mt-2">
-                    Proyek Yang Telah Kami Lokalisasi
-                </h2>
-            </div>
-
-            <!-- Category Filter Tabs -->
-            <div class="flex flex-wrap justify-center gap-3 mb-12">
-                <button class="portfolio-tab active px-5 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-purple-magic text-white transition-all" data-filter="all">Semua</button>
-                <button class="portfolio-tab px-5 py-2 rounded-xl text-xs font-bold uppercase tracking-wider glass-card text-gray-300 hover:text-white transition-all" data-filter="game">Game</button>
-                <button class="portfolio-tab px-5 py-2 rounded-xl text-xs font-bold uppercase tracking-wider glass-card text-gray-300 hover:text-white transition-all" data-filter="app">Aplikasi & SaaS</button>
-                <button class="portfolio-tab px-5 py-2 rounded-xl text-xs font-bold uppercase tracking-wider glass-card text-gray-300 hover:text-white transition-all" data-filter="web">Website</button>
-            </div>
-
-            <!-- Portfolio Grid -->
-            <div class="grid md:grid-cols-3 gap-8" id="portfolio-grid">
-                
-                <!-- Item 1: Game -->
-                <div class="portfolio-item game glass-card rounded-2xl overflow-hidden glass-card-hover">
-                    <div class="h-48 bg-navy-700 relative overflow-hidden flex items-center justify-center p-6 bg-gradient-to-br from-purple-900/50 to-navy-900">
-                        <i class="fa-solid fa-dragon text-6xl text-purple-bright opacity-40"></i>
-                        <span class="absolute top-4 right-4 bg-purple-magic/80 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">RPG Mobile Game</span>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="font-heading font-bold text-lg text-white mb-2">Chronicles of Eldoria</h3>
-                        <p class="text-gray-300 text-xs leading-relaxed mb-4">
-                            Lokalisasi 120.000+ kata skrip lore dan dialog dari Bahasa Inggris ke Bahasa Indonesia & Thai.
-                        </p>
-                        <div class="flex items-center justify-between text-xs text-gold-magic font-semibold">
-                            <span>Inggris &rarr; Indonesia, Thai</span>
-                            <i class="fa-solid fa-circle-check"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 2: App -->
-                <div class="portfolio-item app glass-card rounded-2xl overflow-hidden glass-card-hover">
-                    <div class="h-48 bg-navy-700 relative overflow-hidden flex items-center justify-center p-6 bg-gradient-to-br from-blue-900/50 to-navy-900">
-                        <i class="fa-solid fa-wallet text-6xl text-gold-magic opacity-40"></i>
-                        <span class="absolute top-4 right-4 bg-gold-magic/80 text-navy-900 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Fintech App</span>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="font-heading font-bold text-lg text-white mb-2">PayPulse Global App</h3>
-                        <p class="text-gray-300 text-xs leading-relaxed mb-4">
-                            Penyesuaian UI/UX, terminologi keuangan, serta format regulasi mata uang lokal Asia Tenggara.
-                        </p>
-                        <div class="flex items-center justify-between text-xs text-gold-magic font-semibold">
-                            <span>Inggris &rarr; ID, VN, MY</span>
-                            <i class="fa-solid fa-circle-check"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 3: Web -->
-                <div class="portfolio-item web glass-card rounded-2xl overflow-hidden glass-card-hover">
-                    <div class="h-48 bg-navy-700 relative overflow-hidden flex items-center justify-center p-6 bg-gradient-to-br from-indigo-900/50 to-navy-900">
-                        <i class="fa-solid fa-cart-shopping text-6xl text-purple-glow opacity-40"></i>
-                        <span class="absolute top-4 right-4 bg-purple-bright/80 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">E-Commerce Web</span>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="font-heading font-bold text-lg text-white mb-2">OmniMarket Platform</h3>
-                        <p class="text-gray-300 text-xs leading-relaxed mb-4">
-                            Lokalisasi katalog produk, SEO multibahasa, dan integrasi otomatis dengan CMS platform.
-                        </p>
-                        <div class="flex items-center justify-between text-xs text-gold-magic font-semibold">
-                            <span>Mandarin &rarr; Indonesia</span>
-                            <i class="fa-solid fa-circle-check"></i>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT SECTION -->
-    <section id="kontak" class="py-20 bg-navy-800/60 relative">
+    <!-- CONTACT FORM SECTION -->
+    <section id="kontak" class="py-20 relative">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="glass-card p-8 sm:p-12 rounded-3xl border border-purple-magic/30">
                 <div class="text-center mb-10">
-                    <span class="text-xs font-semibold text-gold-magic uppercase tracking-widest">Mulai Konsultasi</span>
+                    <span class="text-xs font-semibold text-gold-magic uppercase tracking-widest">Mulai Kerjasama</span>
                     <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-white mt-2">Hubungi Tim Magish Studio</h2>
-                    <p class="text-gray-300 text-sm mt-2">Kirimkan rincian proyek Anda dan tim kami akan merespons dalam kurun 24 jam.</p>
+                    <p class="text-gray-300 text-sm mt-2">Kirimkan rincian kebutuhan lokalisasi dokumen, novel, manga, atau subtitle Anda.</p>
                 </div>
 
                 <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-xs font-semibold text-gray-300 mb-2 uppercase">Nama Lengkap</label>
-                            <input type="text" required placeholder="Budi Santoso" class="w-full bg-navy-900 border border-purple-bright/30 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold-magic transition-colors">
+                            <input type="text" required placeholder="Budi Santoso" class="w-full bg-navy-950 border border-purple-bright/30 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-gold-magic transition-colors">
                         </div>
                         <div>
-                            <label class="block text-xs font-semibold text-gray-300 mb-2 uppercase">Alamat Email Work</label>
-                            <input type="email" required placeholder="budi@perusahaan.com" class="w-full bg-navy-900 border border-purple-bright/30 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold-magic transition-colors">
+                            <label class="block text-xs font-semibold text-gray-300 mb-2 uppercase">Email / WhatsApp</label>
+                            <input type="text" required placeholder="budi@email.com / 08123456789" class="w-full bg-navy-950 border border-purple-bright/30 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-gold-magic transition-colors">
                         </div>
                     </div>
 
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-xs font-semibold text-gray-300 mb-2 uppercase">Layanan Yang Dibutuhkan</label>
-                            <select id="form-service-select" class="w-full bg-navy-900 border border-purple-bright/30 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold-magic transition-colors">
-                                <option value="game">Lokalisasi Game</option>
-                                <option value="app">Lokalisasi Aplikasi / Software</option>
-                                <option value="web">Lokalisasi Website</option>
-                                <option value="dubbing">Sulih Suara & Subtitle</option>
-                                <option value="transcreation">Pemasaran Transkultural</option>
+                            <label class="block text-xs font-semibold text-gray-300 mb-2 uppercase">Arah Lokalisasi</label>
+                            <select id="form-pair-select" class="w-full bg-navy-950 border border-purple-bright/30 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-gold-magic transition-colors">
+                                <option value="en-id">Inggris → Indonesia (EN to ID)</option>
+                                <option value="id-en">Indonesia → Inggris (ID to EN)</option>
                             </select>
                         </div>
                         <div>
-                            <label class="block text-xs font-semibold text-gray-300 mb-2 uppercase">Pasangan Bahasa Target</label>
-                            <input type="text" placeholder="Contoh: English to Indonesian" class="w-full bg-navy-900 border border-purple-bright/30 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold-magic transition-colors">
+                            <label class="block text-xs font-semibold text-gray-300 mb-2 uppercase">Kategori Konten</label>
+                            <select id="form-service-select" class="w-full bg-navy-950 border border-purple-bright/30 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-gold-magic transition-colors">
+                                <option value="dokumen">Dokumen (Bisnis/Akademik/Legal)</option>
+                                <option value="novel">Novel & Literatur</option>
+                                <option value="manga">Manga / Komik / Manhwa</option>
+                                <option value="subtitle">Takarir (Subtitle) Film & Anime</option>
+                            </select>
                         </div>
                     </div>
 
                     <div>
-                        <label class="block text-xs font-semibold text-gray-300 mb-2 uppercase">Detail Pesan / Catatan Proyek</label>
-                        <textarea id="form-message" rows="4" required placeholder="Jelaskan secara singkat mengenai jenis konten, deadline, atau perkiraan wordcount..." class="w-full bg-navy-900 border border-purple-bright/30 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold-magic transition-colors"></textarea>
+                        <label class="block text-xs font-semibold text-gray-300 mb-2 uppercase">Detail Pesan & Catatan Proyek</label>
+                        <textarea id="form-message" rows="4" required placeholder="Jelaskan mengenai judul naskah, perkiraan wordcount/durasi, atau tenggat waktu pengerjaan..." class="w-full bg-navy-950 border border-purple-bright/30 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-gold-magic transition-colors"></textarea>
                     </div>
 
-                    <button type="submit" class="w-full py-4 rounded-xl font-bold text-sm uppercase tracking-wider bg-gradient-gold text-navy-900 hover:shadow-xl hover:shadow-gold-magic/20 transition-all">
-                        <i class="fa-solid fa-paper-plane mr-2"></i> Kirim Pesan Proyek
+                    <button type="submit" class="w-full py-4 rounded-xl font-bold text-sm uppercase tracking-wider bg-gradient-gold text-navy-950 hover:shadow-xl hover:shadow-gold-magic/20 transition-all">
+                        <i class="fa-solid fa-paper-plane mr-2"></i> Kirim Permintaan Lokalisasi
                     </button>
                 </form>
             </div>
@@ -652,66 +571,63 @@
     </section>
 
     <!-- FOOTER SECTION -->
-    <footer class="bg-navy-900 border-t border-navy-700/60 py-12 text-sm text-gray-400">
+    <footer class="bg-navy-950 border-t border-navy-700/60 py-12 text-sm text-gray-400">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-8 mb-8">
                 
-                <!-- Brand Info -->
                 <div class="md:col-span-2 space-y-4">
                     <div class="flex items-center gap-3">
                         <div class="w-9 h-9 bg-navy-800 rounded-lg border border-purple-magic/40 p-1">
                             <svg viewBox="0 0 100 100" class="w-full h-full text-purple-bright" fill="none">
-                                <circle cx="50" cy="50" r="38" stroke="#9D4EDD" stroke-width="4" />
-                                <line x1="22" y1="78" x2="68" y2="30" stroke="#FFC300" stroke-width="6" stroke-linecap="round" />
-                                <path d="M72 15 L74 24 L83 26 L74 28 L72 37 L70 28 L61 26 L70 24 Z" fill="#FFC300" />
+                                <circle cx="50" cy="50" r="38" stroke="#9D6BFF" stroke-width="4" />
+                                <line x1="22" y1="78" x2="68" y2="30" stroke="#FFB703" stroke-width="6" stroke-linecap="round" />
+                                <path d="M72 15 L74 24 L83 26 L74 28 L72 37 L70 28 L61 26 L70 24 Z" fill="#FFB703" />
                             </svg>
                         </div>
                         <span class="font-heading font-extrabold text-lg text-white">MAGISH STUDIO</span>
                     </div>
                     <p class="text-xs text-gray-400 max-w-sm leading-relaxed">
-                        Agensi lokalisasi konten digital terdepan. Kami membantu pengembang game, aplikasi, dan kreator menjangkau jutaan audiens di seluruh dunia.
+                        Agensi spesialis lokalisasi konten digital Bahasa Inggris & Indonesia. Terfokus penuh pada kualitas pengerjaan Dokumen, Novel, Manga, dan Subtitle Film/Anime.
                     </p>
                 </div>
 
-                <!-- Quick Links -->
                 <div>
-                    <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Navigasi</h4>
+                    <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Layanan Spesialis</h4>
                     <ul class="space-y-2 text-xs">
-                        <li><a href="#beranda" class="hover:text-gold-magic transition-colors">Beranda</a></li>
-                        <li><a href="#layanan" class="hover:text-gold-magic transition-colors">Layanan</a></li>
-                        <li><a href="#kalkulator" class="hover:text-gold-magic transition-colors">Kalkulator Biaya</a></li>
-                        <li><a href="#portfolio" class="hover:text-gold-magic transition-colors">Portfolio</a></li>
+                        <li><a href="#layanan" class="hover:text-gold-magic transition-colors">Lokalisasi Dokumen</a></li>
+                        <li><a href="#layanan" class="hover:text-gold-magic transition-colors">Penerjemahan Novel</a></li>
+                        <li><a href="#layanan" class="hover:text-gold-magic transition-colors">Lokalisasi Manga & Komik</a></li>
+                        <li><a href="#layanan" class="hover:text-gold-magic transition-colors">Subtitle Film & Anime</a></li>
                     </ul>
                 </div>
 
-                <!-- Social Links -->
                 <div>
-                    <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Hubungi Kami</h4>
-                    <div class="flex space-x-4 mb-4">
-                        <a href="#" class="w-9 h-9 rounded-lg glass-card flex items-center justify-center text-gray-300 hover:text-gold-magic transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="#" class="w-9 h-9 rounded-lg glass-card flex items-center justify-center text-gray-300 hover:text-gold-magic transition-colors"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="#" class="w-9 h-9 rounded-lg glass-card flex items-center justify-center text-gray-300 hover:text-gold-magic transition-colors"><i class="fa-brands fa-github"></i></a>
-                        <a href="#" class="w-9 h-9 rounded-lg glass-card flex items-center justify-center text-gray-300 hover:text-gold-magic transition-colors"><i class="fa-brands fa-discord"></i></a>
+                    <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Kontak Magish</h4>
+                    <p class="text-xs text-gray-400 mb-2"><i class="fa-regular fa-envelope text-gold-magic mr-2"></i> hello@magishstudio.com</p>
+                    <p class="text-xs text-gray-400 mb-4"><i class="fa-brands fa-whatsapp text-gold-magic mr-2"></i> +62 812-3456-7890</p>
+                    <div class="flex space-x-3">
+                        <a href="#" class="w-8 h-8 rounded-lg glass-card flex items-center justify-center text-gray-300 hover:text-gold-magic transition-colors"><i class="fa-brands fa-x-twitter text-xs"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-lg glass-card flex items-center justify-center text-gray-300 hover:text-gold-magic transition-colors"><i class="fa-brands fa-instagram text-xs"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-lg glass-card flex items-center justify-center text-gray-300 hover:text-gold-magic transition-colors"><i class="fa-brands fa-discord text-xs"></i></a>
                     </div>
-                    <p class="text-xs text-gray-400">hello@magishstudio.com</p>
                 </div>
 
             </div>
 
             <div class="pt-8 border-t border-navy-800 text-center text-xs text-gray-500">
-                &copy; 2026 Magish Studio. All Rights Reserved.
+                &copy; 2026 Magish Studio. Specialised EN ↔ ID Content Localization.
             </div>
         </div>
     </footer>
 
     <!-- SUCCESS TOAST NOTIFICATION -->
     <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 glass-card border border-gold-magic p-4 rounded-2xl shadow-2xl flex items-center gap-3 max-w-md">
-        <div class="w-10 h-10 rounded-xl bg-gold-magic text-navy-900 flex items-center justify-center font-bold text-lg">
+        <div class="w-10 h-10 rounded-xl bg-gold-magic text-navy-950 flex items-center justify-center font-bold text-lg">
             <i class="fa-solid fa-check"></i>
         </div>
         <div>
-            <h5 class="text-sm font-bold text-white">Pesan Terkirim!</h5>
-            <p class="text-xs text-gray-300">Terima kasih. Tim Magish Studio akan segera menghubungi Anda.</p>
+            <h5 class="text-sm font-bold text-white">Pesan Lokalisasi Terkirim!</h5>
+            <p class="text-xs text-gray-300">Tim Magish Studio akan membalas penawaran Anda dalam waktu 24 jam.</p>
         </div>
     </div>
 
@@ -725,119 +641,146 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Close mobile menu when clicking links
         document.querySelectorAll('#mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
             });
         });
 
-        // Interactive Cost Calculator Logic
+        // CALCULATOR LOGIC (EN <-> ID SPECIFIC)
         const contentTypeSelect = document.getElementById('calc-content-type');
-        const wordsRange = document.getElementById('calc-words');
-        const wordCountLabel = document.getElementById('word-count-label');
-        const langBtns = document.querySelectorAll('.lang-btn');
+        const volumeRange = document.getElementById('calc-volume');
+        const volumeTitle = document.getElementById('volume-label-title');
+        const volumeValueLabel = document.getElementById('volume-value-label');
+        const volumeMinMaxLabels = document.getElementById('volume-minmax-labels');
+        const pairBtns = document.querySelectorAll('.pair-btn');
         const totalPriceEl = document.getElementById('calc-total-price');
+        const rateInfoText = document.getElementById('rate-info-text');
         const etaEl = document.getElementById('calc-eta');
+        const formatOutputText = document.getElementById('format-output-text');
 
-        let selectedLangs = 1;
+        let selectedPair = 'en-id'; // 'en-id' or 'id-en'
 
-        // Base rate per word in IDR
-        const baseRates = {
-            game: 750,
-            app: 700,
-            web: 650,
-            video: 800
+        // Base Rates Configuration in IDR
+        const rates = {
+            dokumen: { rate: 150, unit: 'kata', min: 100, max: 20000, step: 100, defaultVal: 2500, format: 'DOCX / PDF' },
+            novel: { rate: 120, unit: 'kata', min: 1000, max: 50000, step: 500, defaultVal: 10000, format: 'EPUB / DOCX' },
+            manga: { rate: 15000, unit: 'halaman', min: 5, max: 200, step: 1, defaultVal: 20, format: 'PSD / PNG / PDF' },
+            subtitle: { rate: 25000, unit: 'menit durasi', min: 5, max: 180, step: 5, defaultVal: 24, format: 'SRT / ASS / VTT' }
         };
 
-        langBtns.forEach(btn => {
+        // Language Pair Selection
+        pairBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                langBtns.forEach(b => {
+                pairBtns.forEach(b => {
                     b.classList.remove('active', 'border-2', 'border-gold-magic', 'bg-purple-magic/30', 'text-white');
                     b.classList.add('border', 'border-purple-bright/30', 'bg-navy-800', 'text-gray-300');
                 });
                 btn.classList.add('active', 'border-2', 'border-gold-magic', 'bg-purple-magic/30', 'text-white');
                 btn.classList.remove('border', 'border-purple-bright/30', 'bg-navy-800', 'text-gray-300');
                 
-                selectedLangs = parseInt(btn.getAttribute('data-langs'));
+                selectedPair = btn.getAttribute('data-pair');
                 calculateCost();
             });
         });
 
-        function calculateCost() {
-            const words = parseInt(wordsRange.value);
+        // Update Slider Constraints & Labels On Content Type Change
+        function updateSliderConfig() {
             const type = contentTypeSelect.value;
-            wordCountLabel.textContent = words.toLocaleString('id-ID');
+            const config = rates[type];
 
-            const rate = baseRates[type] || 750;
-            const totalPrice = words * rate * selectedLangs;
+            volumeRange.min = config.min;
+            volumeRange.max = config.max;
+            volumeRange.step = config.step;
+            volumeRange.value = config.defaultVal;
 
-            // Format Currency IDR
+            if (type === 'subtitle') {
+                volumeTitle.textContent = 'Durasi Video:';
+                volumeMinMaxLabels.innerHTML = '<span>5 menit</span><span>90 menit</span><span>180+ menit</span>';
+            } else if (type === 'manga') {
+                volumeTitle.textContent = 'Jumlah Halaman:';
+                volumeMinMaxLabels.innerHTML = '<span>5 hlm</span><span>100 hlm</span><span>200+ hlm</span>';
+            } else if (type === 'novel') {
+                volumeTitle.textContent = 'Jumlah Kata Novel:';
+                volumeMinMaxLabels.innerHTML = '<span>1.000 kata</span><span>25.000 kata</span><span>50.000+ kata</span>';
+            } else {
+                volumeTitle.textContent = 'Jumlah Kata Dokumen:';
+                volumeMinMaxLabels.innerHTML = '<span>100 kata</span><span>10.000 kata</span><span>20.000+ kata</span>';
+            }
+
+            formatOutputText.textContent = config.format;
+            calculateCost();
+        }
+
+        // Calculation Function
+        function calculateCost() {
+            const type = contentTypeSelect.value;
+            const config = rates[type];
+            const volume = parseInt(volumeRange.value);
+
+            // Pair multiplier (ID -> EN usually slightly higher due to english phrasing precision)
+            const pairMultiplier = (selectedPair === 'id-en') ? 1.15 : 1.0;
+            const finalRate = Math.round(config.rate * pairMultiplier);
+            const totalPrice = volume * finalRate;
+
+            // Format Labels
+            volumeValueLabel.textContent = `${volume.toLocaleString('id-ID')} ${config.unit.charAt(0).toUpperCase() + config.unit.slice(1)}`;
             totalPriceEl.textContent = 'Rp ' + totalPrice.toLocaleString('id-ID');
+            rateInfoText.textContent = `*Tarif estimasi: Rp ${finalRate.toLocaleString('id-ID')} / ${config.unit} (${selectedPair === 'id-en' ? 'ID → EN' : 'EN → ID'})`;
 
-            // Calculate ETA
-            let days = Math.ceil((words / 2000) * (1 + (selectedLangs * 0.2)));
+            // Dynamic ETA Calculation
+            let days = 2;
+            if (type === 'dokumen' || type === 'novel') {
+                days = Math.ceil(volume / 2000);
+            } else if (type === 'manga') {
+                days = Math.ceil(volume / 15);
+            } else if (type === 'subtitle') {
+                days = Math.ceil(volume / 30);
+            }
             if (days < 2) days = 2;
-            etaEl.textContent = `${days} - ${days + 2} Hari Kerja`;
+
+            etaEl.textContent = `${days} - ${days + 1} Hari Kerja`;
         }
 
-        wordsRange.addEventListener('input', calculateCost);
-        contentTypeSelect.addEventListener('change', calculateCost);
+        contentTypeSelect.addEventListener('change', updateSliderConfig);
+        volumeRange.addEventListener('input', calculateCost);
 
-        // Apply calculated quote to contact form
+        // Apply Calculated Quote into Form Textarea
         function applyQuoteToForm() {
-            const words = wordsRange.value;
-            const type = contentTypeSelect.options[contentTypeSelect.selectedIndex].text;
+            const type = contentTypeSelect.value;
+            const config = rates[type];
+            const volume = volumeRange.value;
+            const pairLabel = selectedPair === 'id-en' ? 'Indonesia -> Inggris' : 'Inggris -> Indonesia';
+            const typeLabel = contentTypeSelect.options[contentTypeSelect.selectedIndex].text;
+            
+            const formPairSelect = document.getElementById('form-pair-select');
+            const formServiceSelect = document.getElementById('form-service-select');
             const messageBox = document.getElementById('form-message');
-            messageBox.value = `Halo Magish Studio, saya ingin klaim estimasi kuotasi untuk ${type} sekitar ${parseInt(words).toLocaleString('id-ID')} kata (${selectedLangs} bahasa target).`;
+
+            formPairSelect.value = selectedPair;
+            formServiceSelect.value = type;
+
+            messageBox.value = `Halo Magish Studio, saya ingin berkonsultasi mengenai lokalisasi ${typeLabel} (${pairLabel}) dengan estimasi volume ${parseInt(volume).toLocaleString('id-ID')} ${config.unit}.`;
         }
 
-        // Portfolio Filtering
-        const portfolioTabs = document.querySelectorAll('.portfolio-tab');
-        const portfolioItems = document.querySelectorAll('.portfolio-item');
-
-        portfolioTabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                portfolioTabs.forEach(t => {
-                    t.classList.remove('active', 'bg-purple-magic', 'text-white');
-                    t.classList.add('glass-card', 'text-gray-300');
-                });
-                tab.classList.add('active', 'bg-purple-magic', 'text-white');
-                tab.classList.remove('glass-card', 'text-gray-300');
-
-                const filter = tab.getAttribute('data-filter');
-
-                portfolioItems.forEach(item => {
-                    if (filter === 'all' || item.classList.contains(filter)) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-            });
-        });
-
-        // Contact Form Submission Mock
+        // Contact Form Mock Submission
         function handleFormSubmit(e) {
             e.preventDefault();
             
-            // Show Toast
             const toast = document.getElementById('toast');
             toast.classList.remove('translate-y-24', 'opacity-0');
             toast.classList.add('translate-y-0', 'opacity-100');
 
-            // Reset form
             document.getElementById('contact-form').reset();
 
-            // Hide Toast after 4s
             setTimeout(() => {
                 toast.classList.remove('translate-y-0', 'opacity-100');
                 toast.classList.add('translate-y-24', 'opacity-0');
-            }, 4000);
+            }, 4500);
         }
 
-        // Initialize default calculation
-        calculateCost();
+        // Initial Calculation Run
+        updateSliderConfig();
     </script>
 </body>
 </html>
